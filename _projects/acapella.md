@@ -41,6 +41,7 @@ I have in the past done works for other groups with a small commission. If inter
 | [The Way I Am](http://biz157.inmotionhosting.com/~aaronl8/wp-content/uploads/2014/12/The-Way-I-Am-done-Full-Score.pdf) |  Ingrid Michaelson |  SATB + solo | 
 | [Viva La Vida](http://biz157.inmotionhosting.com/~aaronl8/wp-content/uploads/2014/12/Viva-La-Vida-Full-Score.pdf) | Cold Play | SATB + solo | 
 | Winter Song | Sara Bareilles and Ingrid Michaelson | SAATB | 
+| Chicken Dance | Folk Song | SATB |
 
 
 ## Holiday Songs

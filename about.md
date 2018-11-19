@@ -3,7 +3,6 @@ author: alichtner
 comments: false
 date: 2014-12-01 21:15:58+00:00
 layout: page
-link: http://aaronlichtner.com/
 slug: about
 title: About
 permalink: /about/

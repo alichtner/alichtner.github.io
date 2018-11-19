@@ -3,9 +3,8 @@ author: Aaron Lichtner
 comments: false
 date: 2014-10-12 22:16:08+00:00
 layout: page
-link: http://aaronlichtner.com/resume/
 slug: resume
-title: Curriculum Vitae
+title: Resume
 ---
 
 [Resume pdf form (Click Me!)](http://aaronlichtner.com/wp-content/uploads/2014/10/resume_AaronLichtner.pdf)
