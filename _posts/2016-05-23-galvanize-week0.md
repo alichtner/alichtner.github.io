@@ -3,14 +3,9 @@ author: Aaron Lichtner
 comments: true
 date: 2016-05-23 
 layout: post
-link: http://aaronlichtner.com/galvanize-week0/
 slug: galvanize-week0
 title: 'Galvanize Data Science: Week 0'
 image: http://aaronlichtner.com/wp-content/uploads/2016/05/pioneersquare1-644x491.jpg
-categories:
-- Blog
-- Data Science
-- Programming
 tags: galvanize
 ---
 

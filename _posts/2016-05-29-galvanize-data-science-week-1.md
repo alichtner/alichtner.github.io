@@ -3,14 +3,9 @@ author: Aaron Lichtner
 comments: true
 date: 2016-05-29 
 layout: post
-link: http://aaronlichtner.com/galvanize-data-science-week-1/
 slug: galvanize-data-science-week-1
 title: 'Galvanize Data Science: Week 1'
 image: http://aaronlichtner.com/wp-content/uploads/2016/05/Screen-Shot-2016-05-29-at-10.37.13-AM-1-179x300.png
-categories:
-- Blog
-- Data Science
-- Programming
 tags: bash galvanize git github sql
 ---
 

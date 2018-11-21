@@ -1,11 +1,10 @@
 ---
-author: alichtner
+author: Aaron Lichtner
 comments: false
-date: 2014-12-01 21:15:58+00:00
+date: 2014-12-01
 layout: page
 slug: about
 title: About
-permalink: /about/
 ---
 
 

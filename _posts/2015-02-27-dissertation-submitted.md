@@ -3,12 +3,8 @@ author: Aaron Lichtner
 comments: true
 date: 2015-02-27
 layout: post
-link: http://aaronlichtner.com/dissertation-submitted/
 slug: dissertation-submitted
 title: Dissertation Submitted
-categories:
-- Blog
-- Research
 ---
 
 Boy does that feel good to say.

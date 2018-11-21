@@ -3,13 +3,9 @@ author: Aaron Lichtner
 comments: false
 date: 2016-06-20 
 layout: post
-link: http://aaronlichtner.com/week-4-trees-forests-bagging-and-boosting/
 slug: week-4-trees-forests-bagging-and-boosting
 title: Week 4 - Trees, Forests, Bagging and Boosting
 image: http://aaronlichtner.com/wp-content/uploads/2016/06/pride_trees-644x474.png
-categories:
-- Blog
-- Data Science
 tags: galvanize machine-learning random-forests supervised-methods
 ---
 

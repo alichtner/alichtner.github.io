@@ -3,14 +3,9 @@ author: Aaron Lichtner
 comments: true
 date: 2015-08-24 
 layout: post
-link: http://aaronlichtner.com/r-a-little-bit-on-multidimensional-arrays-and-apply/
 slug: r-a-little-bit-on-multidimensional-arrays-and-apply
 title: '[R] A little bit on multidimensional arrays and apply()'
 image: http://aaronlichtner.com/wp-content/uploads/2015/08/3Darray_apply_11-644x181.png
-categories:
-- Blog
-- Programming
-- R
 ---
 
 The command-line can be a little unintuitive when dealing with multidimensional objects since it is a 2D medium. It is therefore hard to envision objects greater than 2-dimensions. They exist however!

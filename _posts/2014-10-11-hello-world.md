@@ -3,12 +3,8 @@ author: Aaron Lichtner
 comments: true
 date: 2014-10-11 
 layout: post
-link: http://aaronlichtner.com/hello-world/
 slug: hello-world
 title: Café Gourmand
-categories:
-- All Things French
-- Blog
 ---
 
 

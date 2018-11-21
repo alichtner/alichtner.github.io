@@ -3,12 +3,9 @@ author: Aaron Lichtner
 comments: true
 date: 2015-06-07
 layout: post
-link: http://aaronlichtner.com/little-french-quirks/
 slug: little-french-quirks
 title: USA-France Quirks
 image: http://aaronlichtner.com/wp-content/uploads/2015/06/DaddySucre.jpg
-categories:
-- All Things French
 ---
 
 ## Things Americans might find strange in France

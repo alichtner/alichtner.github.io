@@ -3,15 +3,10 @@ author: Aaron Lichtner
 comments: false
 date: 2016-07-10 
 layout: post
-link: http://aaronlichtner.com/week-6-7-unsupervised-methods-recommenders-and-break-week/
 slug: week-6-7-unsupervised-methods-recommenders-and-break-week
 title: 'Week 6 / 7: Unsupervised Methods, Recommenders and Break Week'
 image: http://aaronlichtner.com/wp-content/uploads/2016/07/slow-644x483.gif
-categories:
-- Blog
-- Data Science
-- Programming
-tags: clustering galvanize kmeans recommenders unsupervised-methods
+tags: clustering galvanize kmeans recommenders unsupervised-methods recommendation
 ---
 
 ![K-Means Clustering Animation](http://aaronlichtner.com/wp-content/uploads/2016/07/slow-644x483.gif)

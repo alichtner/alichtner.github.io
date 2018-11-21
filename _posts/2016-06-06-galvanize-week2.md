@@ -3,15 +3,10 @@ author: Aaron Lichtner
 comments: true
 date: 2016-06-06 
 layout: post
-link: http://aaronlichtner.com/galvanize-week2/
 slug: galvanize-week2
 title: 'Galvanize Data Science: Week 2'
 image: http://aaronlichtner.com/wp-content/uploads/2016/06/shade_plot-644x483.gif
-categories:
-- Blog
-- Data Science
-- Programming
-tags: A/B-Testing Bayesian galvanize probability statistics
+tags: A-B-Testing Bayesian galvanize probability statistics
 ---
 
 Today, the high in Seattle hit 92°F. It's very hot in my apartment, I feel like a normal distribution with an increasing standard deviation...
