@@ -3,13 +3,9 @@ author: Aaron Lichtner
 comments: true
 date: 2016-06-13 05:37:09+00:00
 layout: post
-link: http://aaronlichtner.com/galvanize-week3/
 slug: galvanize-week3
 title: Week 3 - Regression and the Dying Computer
 image: http://aaronlichtner.com/wp-content/uploads/2016/06/conf_annot-644x443.png
-categories:
-- Blog
-- Data Science
 tags: galvanize Regression
 ---
 

@@ -3,12 +3,9 @@ author: Aaron Lichtner
 comments: true
 date: 2015-04-25
 layout: post
-link: http://aaronlichtner.com/go-learn-english/
 slug: go-learn-english
 title: Go learn English!
 image: http://aaronlichtner.com/wp-content/uploads/2015/04/translate_image.jpeg
-categories:
-- Blog
 ---
 
 [![translate_image](http://aaronlichtner.com/wp-content/uploads/2015/04/translate_image.jpeg)](http://aaronlichtner.com/wp-content/uploads/2015/04/translate_image.jpeg)

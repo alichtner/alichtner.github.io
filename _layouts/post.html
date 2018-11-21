@@ -2,7 +2,12 @@
 layout: default
 ---
 
+
+{% if page.lang %}
+<div class="post" lang="{{page.lang}}">
+{% else %}
 <div class="post">
+{% endif %}
   <h1 class="post-title">{{ page.title }}</h1>
   <span class="post-tags">
     [&nbsp;
