@@ -9,7 +9,7 @@ image: http://aaronlichtner.com/wp-content/uploads/2016/06/conf_annot-644x443.pn
 tags: galvanize Regression
 ---
 
-[caption id="attachment_812" align="aligncenter" width="644"]![conf_annot](http://aaronlichtner.com/wp-content/uploads/2016/06/conf_annot-644x443.png) My general confidence this week.[/caption]
+![conf_annot](http://aaronlichtner.com/wp-content/uploads/2016/06/conf_annot-644x443.png) *My general confidence this week.*
 
 
 

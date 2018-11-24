@@ -6,6 +6,10 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: ""
 url: ""
 github_username:  alichtner
+linkedin_username: aaronlichtner
+github_repo: github.com/alichtner.github.io
+emailme: mailto:alichtner@gmail.com
+instagram_handle: seattlefreezer
 
 # Build settings
 markdown: kramdown

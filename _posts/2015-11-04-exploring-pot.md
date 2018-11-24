@@ -6,6 +6,7 @@ layout: post
 slug: exploring-pot
 title: Analyzing the relationship between retail pot sales and call-center data
 image: http://aaronlichtner.com/wp-content/uploads/2015/11/weed_actual.png
+tags: R leaflet geodata marijuana
 ---
 
 For years, the criminalization of Marijuana sale and usage has made data collection and research on the topic difficult to perform. In Washington state, Recreational Marijuana went on sale in local dispensaries starting mid-2014. The question of whether or not the opening of a dispensary produces a spike in the amount and type of Marijuana use is a valid question for legislators, administrators, doctors and more.

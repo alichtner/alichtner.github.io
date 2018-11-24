@@ -9,7 +9,7 @@ image: http://aaronlichtner.com/wp-content/uploads/2016/06/pride_trees-644x474.p
 tags: galvanize machine-learning random-forests supervised-methods
 ---
 
-[caption id="attachment_826" align="aligncenter" width="644"]![pride_trees](http://aaronlichtner.com/wp-content/uploads/2016/06/pride_trees-644x474.png) It's Pride and here is my Random Forest - this isn't really how it works...[/caption]
+![pride_trees](http://aaronlichtner.com/wp-content/uploads/2016/06/pride_trees-644x474.png) *It's Pride and here is my Random Forest - this isn't really how it works...*
 
 
 
@@ -29,65 +29,13 @@ Let's take an entirely made up (and ridiculous) set of data relating 'eye color'
 
 
 
-<table style="width: 75%;" >
-<tbody >
-<tr >
+| **X1 = Eye Color** | **X2 = Favorite Sushi** | **Y = Likes Cats ** |
+| --- | --- | --- |
+Brown | California Rolls | True
+Brown | Yellowtail | False
+Blue | California Roll  | False
+Green | Cucumber Roll | True
 
-<td >**X1 = Eye Color**
-</td>
-
-<td >**X2 = Favorite Sushi**
-</td>
-
-<td >**Y = Likes Cats **
-</td>
-</tr>
-<tr >
-
-<td >Brown
-</td>
-
-<td >California Rolls
-</td>
-
-<td >True
-</td>
-</tr>
-<tr >
-
-<td >Brown
-</td>
-
-<td >Yellowtail
-</td>
-
-<td >False
-</td>
-</tr>
-<tr >
-
-<td >Blue
-</td>
-
-<td >California Roll
-</td>
-
-<td >False
-</td>
-</tr>
-<tr >
-
-<td >Green
-</td>
-
-<td >Cucumber Roll
-</td>
-
-<td >True
-</td>
-</tr>
-</tbody>
-</table>
 
 
 

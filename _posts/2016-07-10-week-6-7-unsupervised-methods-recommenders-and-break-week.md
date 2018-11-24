@@ -6,7 +6,7 @@ layout: post
 slug: week-6-7-unsupervised-methods-recommenders-and-break-week
 title: 'Week 6 / 7: Unsupervised Methods, Recommenders and Break Week'
 image: http://aaronlichtner.com/wp-content/uploads/2016/07/slow-644x483.gif
-tags: clustering galvanize kmeans recommenders unsupervised-methods recommendation
+tags: clustering galvanize kmeans recommenders unsupervised-methods
 ---
 
 ![K-Means Clustering Animation](http://aaronlichtner.com/wp-content/uploads/2016/07/slow-644x483.gif)
@@ -22,10 +22,6 @@ Well, it's the end of break week, that's why there wasn't a post last Sunday. In
 The way K-Means works is you take some set of data and tell the algorithm how many clusters (K) you think might be present. This can be done systematically or explicitly. The computer will then randomly place those K-cluster centers in the data and iteratively try to optimize the classification of the real data until you have the best optimized clusters possible. Optimization, in this case, refers to minimizing the euclidean distance between classified data points and their respective cluster centers as best as possible. Below, I've shown the results of K-Means clustering on the famous ["Iris" ](https://archive.ics.uci.edu/ml/datasets/Iris)data using K-values from 1 - 4. By eye, we can see that there is most probably 2 or 3 clusters present (humans are very good at pattern recognition) but we can tell the computer any number of clusters we want until the number of clusters is equal to the number of data points, at which point you will have classified each datapoint as it's own class which is fairly useless.
 
 
-
-[one_half padding="0 10px 0 10px"]
-
-
 **K = 1 Clusters**
 
 
@@ -36,14 +32,6 @@ The way K-Means works is you take some set of data and tell the algorithm how m
 
 
 ![2_anim_crop](http://aaronlichtner.com/wp-content/uploads/2016/07/2_anim_crop-300x229.gif)
-
-
-
-
-
-[/one_half]
-
-[one_half_last padding="0 10px 0 10px"]
 
 
 **K = 3 Clusters**
@@ -57,7 +45,6 @@ The way K-Means works is you take some set of data and tell the algorithm how m
 
 ![4_anim_crop](http://aaronlichtner.com/wp-content/uploads/2016/07/4_anim_crop-300x229.gif)
 
-[/one_half_last]
 
 This was a pretty fun little exercise, and I enjoyed building the different visualizations using both python's matplotlib and an fantastic command-line tool called ImageMagick (thank you [Denis](https://github.com/denrou)) to make the animations.[ I've made the class file and documentation for my code available on github if anyone is interested. ](https://github.com/alichtner/kmeans-clustering)
 

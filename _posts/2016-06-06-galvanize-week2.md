@@ -11,7 +11,7 @@ tags: A-B-Testing Bayesian galvanize probability statistics
 
 Today, the high in Seattle hit 92°F. It's very hot in my apartment, I feel like a normal distribution with an increasing standard deviation...
 
-[caption id="attachment_794" align="aligncenter" width="644"]![shade_plot](http://aaronlichtner.com/wp-content/uploads/2016/06/shade_plot-644x483.gif) Animated normal distribution with a changing standard deviation. Made with matplotlib and imageMagick.[/caption]
+![shade_plot](http://aaronlichtner.com/wp-content/uploads/2016/06/shade_plot-644x483.gif) *Animated normal distribution with a changing standard deviation. Made with matplotlib and imageMagick.*
 
 Before entering the Data Science Intensive Program at Galvanize, I reached out to current and previous cohort members to see if they had any thoughts or advice for someone thinking to enter. Nearly every person came back with a glowing review and the same analogy:
 

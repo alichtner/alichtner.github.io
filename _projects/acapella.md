@@ -1,11 +1,12 @@
 ---
-author: alichtner
+author: Aaron Lichtner
 comments: false
-date: 2014-10-12 22:15:23+00:00
+date: 2014-10-12 
 layout: page
 url: a-cappella-arrangements/
 slug: a-cappella-arrangements
 title: Vocal Arrangements
+image: https://www.capaa.org/wp-content/uploads/2018/08/a-cappella-choir-.jpg
 ---
 
 
