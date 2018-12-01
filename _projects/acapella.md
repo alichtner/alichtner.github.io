@@ -45,7 +45,7 @@ I have in the past done works for other groups with a small commission. If inter
 | Chicken Dance | Folk Song | SATB |
 | [Havana](/public/files/havana.pdf) | Camila Cabello | SAB + solo | 
 | [The Chain](/public/files/The-Chain-Full_Score.pdf) | Fleetwood Mac | SATB | 
-| [You and I](/public/files/you_and_.pdf) | Lady Gaga | SATB + solo |
+| [You and I](/public/files/you_and_i.pdf) | Lady Gaga | SATB + solo |
 
 
 
