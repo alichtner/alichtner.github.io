@@ -5,13 +5,13 @@ date: 2016-06-06
 layout: post
 slug: galvanize-week2
 title: 'Galvanize Data Science: Week 2'
-image: http://aaronlichtner.com/wp-content/uploads/2016/06/shade_plot-644x483.gif
+image: /public/img/shade_plot-644x483.gif
 tags: A-B-Testing Bayesian galvanize probability statistics
 ---
 
 Today, the high in Seattle hit 92°F. It's very hot in my apartment, I feel like a normal distribution with an increasing standard deviation...
 
-![shade_plot](http://aaronlichtner.com/wp-content/uploads/2016/06/shade_plot-644x483.gif) *Animated normal distribution with a changing standard deviation. Made with matplotlib and imageMagick.*
+![shade_plot](/public/img/shade_plot.gif) *Animated normal distribution with a changing standard deviation. Made with matplotlib and imageMagick.*
 
 Before entering the Data Science Intensive Program at Galvanize, I reached out to current and previous cohort members to see if they had any thoughts or advice for someone thinking to enter. Nearly every person came back with a glowing review and the same analogy:
 

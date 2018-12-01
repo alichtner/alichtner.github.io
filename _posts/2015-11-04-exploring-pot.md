@@ -15,7 +15,7 @@ As an exploratory exercise, I created the following map using call-center data g
 
 "Cases" are any calls that went to the Washington Poison Center related to Marijuana usage. This could be anything from "My child got into my weed cookies" to a doctor calling to consult on someone who ingested too much Marijuana.
 
-[![weed_actual](http://aaronlichtner.com/wp-content/uploads/2015/11/weed_actual.png)](http://aaronlichtner.com/exploring-pot/weed_actual/)
+![weed_actual](/public/img/weed_actual.png)
 
 In this period of time there were only a few hundred cases. This was enough however to see some trends in the data. The highest number of cases occurred in the U District and in Pioneer Square.
 

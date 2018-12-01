@@ -5,7 +5,7 @@ date: 2015-08-24
 layout: post
 slug: r-a-little-bit-on-multidimensional-arrays-and-apply
 title: '[R] A little bit on multidimensional arrays and apply()'
-image: http://aaronlichtner.com/wp-content/uploads/2015/08/3Darray_apply_11-644x181.png
+image: /public/img/3Darray_apply_11-644x181.png
 tags: R 
 ---
 
@@ -23,7 +23,7 @@ Here is the array function:
 
 
 
-![3Darray_apply_1](http://aaronlichtner.com/wp-content/uploads/2015/08/3Darray_apply_11-644x181.png)
+![3Darray_apply_1](/public/img/3Darray_apply_11-644x181.png)
 
 
 
@@ -37,4 +37,4 @@ Using `apply()`, we can perform functions on elements which are aligned in certa
 
 where `X` is the array over which apply should be...applied, `margins` is an integer vector telling R which margins (dimensions) to maintain and which to collapse, and `FUN` is the function to by applied. Basically, the `apply()` function is taking the sum over all elements in a certain edge of the cube. The `margin` attributes simply tell R which edges we are summing over. In the examples below, R converts a 3D array object into a 2D object. You can see the effect of changing the `margins` attribute on the final result of the summed arrays shown below.
 
-[![3Darray_apply_2_4](http://aaronlichtner.com/wp-content/uploads/2015/08/3Darray_apply_2_4-644x843.png)](http://aaronlichtner.com/wp-content/uploads/2015/08/3Darray_apply_2_4.png)
+![3Darray_apply_2_4](/public/img/3Darray_apply_2_4-644x843.png)]

@@ -13,7 +13,7 @@ tags: galvanize
 
 
 
-![View of pioneer square from Galvanize's headquarters in Downtown Seattle](http://aaronlichtner.com/wp-content/uploads/2016/05/pioneersquare1-644x491.jpg) *View of pioneer square from Galvanize's headquarters in Downtown Seattle.*
+![View of pioneer square from Galvanize's headquarters in Downtown Seattle](/public/img/pioneersquare1-644x491.jpg) *View of pioneer square from Galvanize's headquarters in Downtown Seattle.*
 
 In the data science program at Galvanize, you sign up for a 13 week, intensive course in Python, machine learning, statistics and more. It is meant to be a highly efficient means of transitioning into the data science and analytics field; a transition I've been excited to make for some time now.
 

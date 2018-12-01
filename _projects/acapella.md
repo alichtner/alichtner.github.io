@@ -12,7 +12,7 @@ image: https://www.capaa.org/wp-content/uploads/2018/08/a-cappella-choir-.jpg
 
 Since 2007, I've been creating multi-voice arrangements for the a cappella groups that I've been involved in. All of these arrangements were created by me (sometimes with the help of friends) for non-commercial purposes. These songs have been sung by [Take it SLO](http://www.takeitslo.com/) in San Luis Obispo, California and [Seatown Sound](https://www.facebook.com/SeatownSound) in Seattle, Washington. Please feel free to download, alter, and reproduce my works. If you would be so kind as to credit the original artist and myself that would be just peachy.
 
-I have in the past done works for other groups with a small commission. If interested, please[ contact](http://aaronlichtner.com/contact/) me.
+I have in the past done works for other groups with a small commission. If interested, please [contact](http://aaronlichtner.com/contact/) me.
 
 *Still in current repetoire
 

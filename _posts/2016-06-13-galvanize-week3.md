@@ -5,11 +5,11 @@ date: 2016-06-13 05:37:09+00:00
 layout: post
 slug: galvanize-week3
 title: Week 3 - Regression and the Dying Computer
-image: http://aaronlichtner.com/wp-content/uploads/2016/06/conf_annot-644x443.png
+image: /public/img/conf_annot-644x443.png
 tags: galvanize Regression
 ---
 
-![conf_annot](http://aaronlichtner.com/wp-content/uploads/2016/06/conf_annot-644x443.png) *My general confidence this week.*
+![conf_annot](/public/img/conf_annot-644x443.png) *My general confidence this week.*
 
 
 

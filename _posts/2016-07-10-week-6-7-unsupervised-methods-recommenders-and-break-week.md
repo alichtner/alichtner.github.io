@@ -5,11 +5,11 @@ date: 2016-07-10
 layout: post
 slug: week-6-7-unsupervised-methods-recommenders-and-break-week
 title: 'Week 6 / 7: Unsupervised Methods, Recommenders and Break Week'
-image: http://aaronlichtner.com/wp-content/uploads/2016/07/slow-644x483.gif
+image: /public/img/slow.gif
 tags: clustering galvanize kmeans recommenders unsupervised-methods
 ---
 
-![K-Means Clustering Animation](http://aaronlichtner.com/wp-content/uploads/2016/07/slow-644x483.gif)
+![K-Means Clustering Animation](/public/img/slow.gif)
 
 
 
@@ -25,25 +25,25 @@ The way K-Means works is you take some set of data and tell the algorithm how m
 **K = 1 Clusters**
 
 
-![1_anim_crop](http://aaronlichtner.com/wp-content/uploads/2016/07/1_anim_crop-300x229.gif)
+![1_anim_crop](/public/img/1_anim_crop.gif)
 
 
 **K = 2 Clusters**
 
 
-![2_anim_crop](http://aaronlichtner.com/wp-content/uploads/2016/07/2_anim_crop-300x229.gif)
+![2_anim_crop](/public/img/2_anim_crop.gif)
 
 
 **K = 3 Clusters**
 
 
-![3_anim_crop](http://aaronlichtner.com/wp-content/uploads/2016/07/3_anim_crop-300x229.gif)
+![3_anim_crop](/public/img/3_anim_crop.gif)
 
 
 **K = 4 Clusters**
 
 
-![4_anim_crop](http://aaronlichtner.com/wp-content/uploads/2016/07/4_anim_crop-300x229.gif)
+![4_anim_crop](/public/img/4_anim_crop.gif)
 
 
 This was a pretty fun little exercise, and I enjoyed building the different visualizations using both python's matplotlib and an fantastic command-line tool called ImageMagick (thank you [Denis](https://github.com/denrou)) to make the animations.[ I've made the class file and documentation for my code available on github if anyone is interested. ](https://github.com/alichtner/kmeans-clustering)

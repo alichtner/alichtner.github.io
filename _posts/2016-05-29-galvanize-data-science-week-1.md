@@ -5,7 +5,7 @@ date: 2016-05-29
 layout: post
 slug: galvanize-data-science-week-1
 title: 'Galvanize Data Science: Week 1'
-image: http://aaronlichtner.com/wp-content/uploads/2016/05/Screen-Shot-2016-05-29-at-10.37.13-AM-1-179x300.png
+image: /public/img/Screen-Shot-2016-05-29-at-10.37.13-AM-1-179x300.png
 tags: bash galvanize git github sql
 ---
 
@@ -114,7 +114,7 @@ We also covered Bash, Object-Oriented Programming, Pandas, AWS and more but I'll
 
 into your shell, you'll see an ASCII version of Cathy saying **"Chocolate, Chocolate, Chocolate, AACK!".  **How useful is that?!
 
-![Screen Shot 2016-05-29 at 10.37.13 AM](http://aaronlichtner.com/wp-content/uploads/2016/05/Screen-Shot-2016-05-29-at-10.37.13-AM-1-179x300.png)
+![Screen Shot 2016-05-29 at 10.37.13 AM](/public/img/Screen-Shot-2016-05-29-at-10.37.13-AM-1-179x300.png)
 
 The week ended with a happy hour hosted specifically for Galvanize's Data Science students past and present. We were able to meet students from the previous cohort and learn about their experiences during and after Galvanize. We've got a great group and I'm happy to be learning and working with these people.
 
