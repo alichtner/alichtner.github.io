@@ -27,17 +27,22 @@ The way K-Means works is you take some set of data and tell the algorithm how m
 
 ![1_anim_crop](/public/img/1_anim_crop.gif)
 
+---
 
 **K = 2 Clusters**
 
 
 ![2_anim_crop](/public/img/2_anim_crop.gif)
 
+---
+
 
 **K = 3 Clusters**
 
 
 ![3_anim_crop](/public/img/3_anim_crop.gif)
+
+--
 
 
 **K = 4 Clusters**
