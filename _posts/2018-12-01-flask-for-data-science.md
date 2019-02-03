@@ -156,10 +156,12 @@ The code to read in the data, split it up and train the model has already been w
     if __name__ == '__main__':
         # build a basic model for titanic survival
         titanic_df = pd.read_csv('data/titanic_data.csv')
-        titanic_df['sex_binary'] = titanic_df['sex'].map({'female': 1, 'male': 0})
+        titanic_df['sex_binary'] = titanic_df['sex'].map({'female': 1, 
+                                                          'male': 0})
         
         # choose our features and create test and train sets
-        features = [u'pclass', u'age', u'sibsp', u'parch', u'fare', u'sex_binary', 'survived']
+        features = ['pclass', 'age', 'sibsp', 'parch', 
+                    'fare', 'sex_binary', 'survived']
         train_df, test_df = train_test_split(titanic_df)
         train_df = train_df[features].dropna()
         test_df = test_df[features].dropna()
@@ -177,7 +179,8 @@ The code to read in the data, split it up and train the model has already been w
         # check the performance
         target_names = ['Died', 'Survived']
         y_pred = L1_logistic.predict(X_test)
-        print(classification_report(y_test, y_pred, target_names=target_names))
+        print(classification_report(y_test, y_pred, 
+                                    target_names=target_names))
         
         # start the app
         app.run(debug=True)
@@ -301,7 +304,12 @@ When you go check out your page you should see the web form there for you. Press
                 sex = 0
             else:
                 sex = 1
-            input_data = np.array([predict_class, predict_age, predict_sibsp, predict_parch, predict_fare, sex])
+            input_data = np.array([predict_class, 
+                                   predict_age, 
+                                   predict_sibsp, 
+                                   predict_parch, 
+                                   predict_fare, 
+                                   sex])
             
             # get prediction
             prediction = L1_logistic.predict_proba(input_data.reshape(1, -1))
