@@ -6,7 +6,7 @@ layout: post
 slug: galvanize-week3
 title: Week 3 - Regression and the Dying Computer
 image: /public/img/conf_annot-644x443.png
-tags: galvanize Regression
+tags: galvanize Regression data-science
 ---
 
 ![conf_annot](/public/img/conf_annot-644x443.png) *My general confidence this week.*

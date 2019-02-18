@@ -6,7 +6,7 @@ layout: post
 slug: galvanize-week0
 title: 'Galvanize Data Science: Week 0'
 image: http://aaronlichtner.com/wp-content/uploads/2016/05/pioneersquare1-644x491.jpg
-tags: galvanize
+tags: galvanize data-science
 ---
 
 # 

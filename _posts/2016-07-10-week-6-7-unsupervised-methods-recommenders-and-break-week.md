@@ -6,7 +6,7 @@ layout: post
 slug: week-6-7-unsupervised-methods-recommenders-and-break-week
 title: 'Week 6 / 7: Unsupervised Methods, Recommenders and Break Week'
 image: /public/img/slow.gif
-tags: clustering galvanize kmeans recommenders unsupervised-methods
+tags: clustering galvanize kmeans recommenders unsupervised-methods data-science
 ---
 
 ![K-Means Clustering Animation](/public/img/slow.gif)

@@ -6,7 +6,7 @@ layout: post
 slug: galvanize-data-science-week-1
 title: 'Galvanize Data Science: Week 1'
 image: /public/img/Screen-Shot-2016-05-29-at-10.37.13-AM-1-179x300.png
-tags: bash galvanize git github sql
+tags: bash galvanize git github sql data-science
 ---
 
 Wow, what a week!
