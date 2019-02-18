@@ -45,7 +45,7 @@ I have in the past done works for other groups with a small commission. If inter
 | [Chicken Dance*](public/files/the-chicken-dance.pdf) | Folk Song | SATB |
 | [Havana*](/public/files/havana.pdf) | Camila Cabello | SAB + solo | 
 | [The Chain*](/public/files/the-chain.pdf) | Fleetwood Mac | SATB | 
-| [Y'did Nefesh](public/files/yedid-nefesh.pdf) | Rabbi Elazar Azriki | TTBB |
+| [Y'did Nefesh](/public/files/yedid-nefesh.pdf) | Rabbi Elazar Azriki | TTBB |
 | [You and I*](/public/files/you_and_i.pdf) | Lady Gaga | SATB + solo |
 
 

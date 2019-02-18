@@ -13,9 +13,14 @@ title: Resume
 
 ## Experience
 
-#### Data Scientist | Nordstrom | Seattle, WA | 2016 - Present
+#### Data Scientist II | Nordstrom | Seattle, WA | 2018 - Present
 
-* Lead data scientist developing Nordstrom "Look" algorithms 
+  * Technical lead data scientist for the team developing "Look" algorithms
+
+#### Data Scientist I | Nordstrom | Seattle, WA | 2016 - 2018
+
+  * Lead data scientist developing Nordstrom "Look" algorithms 
+  * Built machine vision algorithms that now power part of our computer vision platform
 
 #### Data Science Consultant | Drizl | Seattle, WA | 2016
 
@@ -124,6 +129,7 @@ _California Polytechnic State University_
 
 ## Talks and Presentations
     
+  * Seattle Building Intelligent Applications Meetup (September 2017) - Invited Talk
   * Forschuzentrum Jülich (August 2014) - Invited Talk
   * Saint-Gobain R&D (June 2014) - Invited Talk    
   * ICACC 2014 - Daytona Beach, FL    
