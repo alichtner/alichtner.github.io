@@ -15,6 +15,7 @@ title: Contact Me
   <li><input type="email" name="email" class="field-style" placeholder="Your email"></li>
   <li><textarea name="message" class="field-style" placeholder="Whether you want to talk about a capella, 3D printing, or weiner dogs, I'd love to hear from you."></textarea></li>
   <li><input type="submit"></li>
+  <input type="hidden" name="_next" value="/"/>
  </ul>
 </form>
 </div>
