@@ -42,7 +42,7 @@ I always start a project with my requirements. That will help me come up with a 
 
 I've decided to mount two boards on either side of my hallway with a metal bar that sit in a slot just using gravity. The bar can sit at different heights and positions and and can be removed and replaced if need be. 
 
-    - ![conf_annot](/public/img/pullup_plans.png)
+- ![conf_annot](/public/img/pullup_plans.png)
 
 ## Steps
 
