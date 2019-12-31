@@ -60,11 +60,10 @@ I always start a project with my requirements. That will help me come up with a 
 
 10. Using the hacksaw, cut the steel pipe so it just fits between your walls. This will ensure as much pipe as possible is supported by the wood brackets. File the pipe down on the ends to remove any burrs in the steel. 
 
-![conf_annot](/public/img/hacksaw.jpg)
+    - ![conf_annot](/public/img/hacksaw.jpg)
 
 11. Put your steel pipe up between the two boards and you have your pull-up bar! 
 
-![conf_annot](/public/img/pullupbar_on_wall.jpg)
-
+    - ![conf_annot](/public/img/pullupbar_on_wall.jpg)
 
 If you have a narrow enough hallway you too can have a custom pullup bar. 
