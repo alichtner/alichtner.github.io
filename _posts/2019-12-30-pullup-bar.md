@@ -66,7 +66,7 @@ I've decided to mount two boards on either side of my hallway with a metal bar t
 
 9. Attach the boards into the wall making sure everything is level across the hallway. Use at least three screws in a stud. Please make sure everything is good and secure.
 
-    - ![hacksaw](/public/img/2020/01/oneboardmounted.jpg)
+    - ![one board mounted](/public/img/2020/01/onebracketmounted.jpg)
 
 
 10. Using the hacksaw, cut the steel pipe so it just fits between your walls. This will ensure as much pipe as possible is supported by the wood brackets. File the pipe down on the ends to remove any burrs in the steel. 
@@ -75,8 +75,8 @@ I've decided to mount two boards on either side of my hallway with a metal bar t
 
 11. Put your steel pipe up between the two boards and you have your pull-up bar! 
 
-    - ![conf_annot](/public/img/2020/01/pullupbar_on_wall.jpg)
+    - ![all done](/public/img/2020/01/pullupbar_on_wall.jpg)
 
 If you have a narrow enough hallway you too can have a custom pullup bar. Look it holds my weight just fine!
 
-![conf_annot](/public/img/2020/01/pullup.gif)
+![animation](/public/img/2020/01/pullup.gif)
