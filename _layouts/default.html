@@ -9,6 +9,11 @@
 
     <div class="content container">
       {{ content }}
+
+    {% if page.comments %}
+      {% include disqus.html %}
+    {% endif %}
+    
     </div>
 
   </body>
