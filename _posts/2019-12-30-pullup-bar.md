@@ -54,19 +54,24 @@ I've decided to mount two boards on either side of my hallway with a metal bar t
 
 4. Use the hole saw with the drill to remove the hole from where the pull-up bar will go. 
 
+    - ![holes](/public/img/2020/01/holes.jpg)
+
 5. Then use the jigsaw to cut a slot from the board edge to the hole. 
 
 6. Sand everything nice and smooth.
 
 7. After making sure to remove any sawdust residue, wipe the tung oil on in a thin layer and let dry. 
 
-8. Repeat step 7 twice more to get a thicker finish. 
+8. Repeat **step 7** twice more to get a thicker finish. 
 
 9. Attach the boards into the wall making sure everything is level across the hallway. Use at least three screws in a stud. Please make sure everything is good and secure.
 
+    - ![hacksaw](/public/img/2020/01/oneboardmounted.jpg)
+
+
 10. Using the hacksaw, cut the steel pipe so it just fits between your walls. This will ensure as much pipe as possible is supported by the wood brackets. File the pipe down on the ends to remove any burrs in the steel. 
 
-    - ![conf_annot](/public/img/2020/01/hacksaw.jpg)
+    - ![hacksaw](/public/img/2020/01/hacksaw.jpg)
 
 11. Put your steel pipe up between the two boards and you have your pull-up bar! 
 

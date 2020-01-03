@@ -3,6 +3,7 @@ author: Aaron Lichtner
 comments: false
 date: 2016-07-10 
 layout: post
+comments: true
 slug: week-6-7-unsupervised-methods-recommenders-and-break-week
 title: 'Week 6 / 7: Unsupervised Methods, Recommenders and Break Week'
 image: /public/img/slow.gif
