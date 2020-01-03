@@ -42,7 +42,7 @@ I always start a project with my requirements. That will help me come up with a 
 
 I've decided to mount two boards on either side of my hallway with a metal bar that sit in a slot just using gravity. The bar can sit at different heights and positions and and can be removed and replaced if need be. 
 
-- ![conf_annot](/public/img/2020/01/pullup_plans.png)
+![conf_annot](/public/img/2020/01/pullup_plans.png)
 
 ## Steps
 
@@ -54,7 +54,7 @@ I've decided to mount two boards on either side of my hallway with a metal bar t
 
 4. Use the hole saw with the drill to remove the hole from where the pull-up bar will go. 
 
-    - ![holes](/public/img/2020/01/holes.jpg)
+    ![holes](/public/img/2020/01/holes.jpg)
 
 5. Then use the jigsaw to cut a slot from the board edge to the hole. 
 
@@ -66,17 +66,22 @@ I've decided to mount two boards on either side of my hallway with a metal bar t
 
 9. Attach the boards into the wall making sure everything is level across the hallway. Use at least three screws in a stud. Please make sure everything is good and secure.
 
-    - ![one board mounted](/public/img/2020/01/onebracketmounted.jpg)
+    ![one board mounted](/public/img/2020/01/onebracketmounted.jpg)
 
 
 10. Using the hacksaw, cut the steel pipe so it just fits between your walls. This will ensure as much pipe as possible is supported by the wood brackets. File the pipe down on the ends to remove any burrs in the steel. 
 
-    - ![hacksaw](/public/img/2020/01/hacksaw.jpg)
+    ![hacksaw](/public/img/2020/01/hacksaw.jpg)
 
 11. Put your steel pipe up between the two boards and you have your pull-up bar! 
 
-    - ![all done](/public/img/2020/01/pullupbar_on_wall.jpg)
+    ![all done](/public/img/2020/01/pullupbar_on_wall.jpg)
 
-If you have a narrow enough hallway you too can have a custom pullup bar. Look it holds my weight just fine!
+
+## There you have it
+
+If you have a narrow enough hallway you too can have a custom pullup bar. I'm really happy with this design. It was inexpensive, it's out of the way and it meets all my design requirements. 
+
+Most importantly, it holds my weight just fine!
 
 ![animation](/public/img/2020/01/pullup.gif)
