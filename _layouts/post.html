@@ -19,6 +19,11 @@ layout: default
   </span>
   <span class="post-date">{{ page.date | date_to_string }}</span>
   {{ content }}
+
+{% if page.comments %}
+  {% include disqus.html %}
+{% endif %}
+
 </div>
 
 <div class="related">
