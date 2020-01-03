@@ -8,7 +8,7 @@ title: Custom Hallway Pullup Bar
 tags: woodworking fitness maker tinyhouse diy
 ---
 
-![conf_annot](/public/img/pullupbar.png)
+![conf_annot](/public/img/2020/01/pullupbar.png)
 
 ## Project Requirements
 
@@ -42,7 +42,7 @@ I always start a project with my requirements. That will help me come up with a 
 
 I've decided to mount two boards on either side of my hallway with a metal bar that sit in a slot just using gravity. The bar can sit at different heights and positions and and can be removed and replaced if need be. 
 
-- ![conf_annot](/public/img/pullup_plans.png)
+- ![conf_annot](/public/img/2020/01/pullup_plans.png)
 
 ## Steps
 
@@ -66,12 +66,12 @@ I've decided to mount two boards on either side of my hallway with a metal bar t
 
 10. Using the hacksaw, cut the steel pipe so it just fits between your walls. This will ensure as much pipe as possible is supported by the wood brackets. File the pipe down on the ends to remove any burrs in the steel. 
 
-    - ![conf_annot](/public/img/hacksaw.jpg)
+    - ![conf_annot](/public/img/2020/01/hacksaw.jpg)
 
 11. Put your steel pipe up between the two boards and you have your pull-up bar! 
 
-    - ![conf_annot](/public/img/pullupbar_on_wall.jpg)
+    - ![conf_annot](/public/img/2020/01/pullupbar_on_wall.jpg)
 
 If you have a narrow enough hallway you too can have a custom pullup bar. Look it holds my weight just fine!
 
-![conf_annot](/public/img/pullup.gif)
+![conf_annot](/public/img/2020/01/pullup.gif)
