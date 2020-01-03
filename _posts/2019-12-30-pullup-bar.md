@@ -72,4 +72,6 @@ I've decided to mount two boards on either side of my hallway with a metal bar t
 
     - ![conf_annot](/public/img/pullupbar_on_wall.jpg)
 
-If you have a narrow enough hallway you too can have a custom pullup bar. 
+If you have a narrow enough hallway you too can have a custom pullup bar. Look it holds my weight just fine!
+
+![conf_annot](/public/img/pullup.gif)
