@@ -9,8 +9,9 @@ title: Projects
         {% if project.project %}
           {% if project.image %}
             <div class="gridcell">
-              <a class="post-link" href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a>
+              <a class="post-link" href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}
               <img src="{{ project.image }}" />
+              </a>
             </div>
           {% endif %}
         {% endif %}
