@@ -23,7 +23,7 @@ header_pages:
  - contact.md
 
 collections:
-  projects:
+  posts:
     output: true
 
 # Dependencies
