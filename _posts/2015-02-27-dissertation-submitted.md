@@ -5,6 +5,7 @@ date: 2015-02-27
 layout: post
 slug: dissertation-submitted
 title: Dissertation Submitted
+project: false
 ---
 
 Boy does that feel good to say.

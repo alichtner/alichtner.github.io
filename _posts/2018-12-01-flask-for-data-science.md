@@ -6,6 +6,7 @@ layout: post
 slug: building-a-flask-app-model-serving
 title: 'Build a Flask app for model serving'
 image: /public/img/slow.gif
+project: true
 tags: flask data-science api jinja-templating
 ---
 

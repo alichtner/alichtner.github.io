@@ -7,6 +7,7 @@ slug: go-learn-english
 title: Go learn English!
 image: /public/img/translate_image.jpeg
 tags: france
+project: false
 ---
 
 ![translate_image](/public/img/translate_image.jpeg)

@@ -1,0 +1,41 @@
+.gridcontainer {
+    margin: 0 auto;
+    padding: 0 .5rem;
+  }
+
+  .responsive-image {
+    max-width: 100%;
+  }
+
+  .gridcell img {
+    display: block;
+    width: 100%;
+    margin: .5rem;
+  }
+
+  @media screen and (min-width: 600px) {
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+
+  @media screen and (min-width: 1000px) {
+    .gridell {
+      width: calc(100% / 2);
+    }
+  }
+
+
+
+  @media screen and (min-width: 600px) {
+    .gridcell {
+      width: calc(50% - .1rem);
+    }
+  }
+  
+  @media screen and (min-width: 1000px) {
+    .gridcell {
+      width: calc(50% - .1rem);
+    }
+  }

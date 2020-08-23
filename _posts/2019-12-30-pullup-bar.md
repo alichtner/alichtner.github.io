@@ -5,6 +5,8 @@ date: 2019-12-30
 layout: post
 slug: pullup-bar
 title: Custom Hallway Pullup Bar
+project: true
+image: /public/img/2020/01/pullupbar.png
 tags: woodworking fitness maker tinyhouse diy
 ---
 
