@@ -8,83 +8,94 @@ title: DIY Adjustable Workout Bench + Storage
 tags: woodworking fitness maker diy covid
 ---
 
-![conf_annot](/public/img/2020/08/weightbench.png)
+![](../public/img/2020/08/weightbench.png)
 
-So I wanted a pull-up bar in my house but I've always hated those doorframe pull-up bars you get at Target. They are too short for me to hang from and not have my feet dragging on the ground. They don't feel very sturdy to me and they can damage your door and walls. Oh and they are ugly. 
+## Project Difficulty 
+
+- 8/10 (Not for the feint of heart)
+
+After COVID struck and gyms shut down it became pretty clear that I'd need something better than my flimsy piano bench to use as a workout bench. 
+There was an influx of DIY versions of home workout equipment being advertised on instagram and youtube but nothing quite met all my requirements. 
+This design represents a lot of thinking and planning and takes inspiration from some of the best other DIY designers I could find online. I'll post some of my favorite other benches below.
 
 ## Project Requirements
 
-I always start a project with my requirements. That will help me come up with a design and some constraints.
-
-- Solidly supports my weight for pullups
-- Doesn't block the doorway
-- Tall enough for me to hang from without my feet touching the ground
-- Not obtrusive / isn't obviously visible
+- Sturdy workout that can support my weight
+- Has an adjustable back for incline and seated exercises
+- Stores fitness equipment easily out of view
+- Mobile enough for moving in and out of the way
+- Looks nice sitting out
 
 ## Supplies
 
 - 3/4" Plywood (I used Baltic Birch)
+- Standard 2x4s 
+- Standard 2x2s
 - 3/4" Galvanized Steel Pipe
+- Pocket Screw Jig
 - Long Wood Screws
-- Tung Oil (or whatever finish you want)
+- Heavy Duty Furniture Casters
+- Water-Based Polyurethane (or whatever finish you want)
+- 1" Foam Badding
+- 2 yards of heavy-duty vinyl / faux leather
 
 ## Required Equipment
 
+- Circular Saw / Table Saw
+- Track Saw Guile
 - Jigsaw
 - Drill
-- Hole Saw
-- Studfinder
 - Hack Saw
 - Sandpaper
 - Measuring Tape
 - Level
 - File
 
+## Cutlist 
+
+- Four (4) 31.5" 2x4
+- Four (4) 12.5" 2x4
+- Four (4) 5.5" 2x4
+- Two (2) 12.5" x 14" 3/4" Baltic Birch
+- Two (2) 12.5" x 34.5" 3/4" Baltic Birch
+- One (1) 14" x 36" 3/4" Baltic Birch
+- One (1) 14" x 23" 3/4" Baltic Birch
+- One (1) 14" x 12" 3/4" Baltic Birch
+- Two (2) 21" 2x2
+- Two (2) 12" 2x2
+- Two (2) 1.5" x 4" 3/4" Baltic Birch
+- One (1) 1.5" x 6" 3/4" Baltic Birch
+- Two (2) 11.5" #8 Threaded Steel Rod
+- One (1) 9" #8 Threaded Steel Rod
+
 ## Design
 
-For the pull-up bar design, I've decided to mount two boards on either side of a hallway with a metal bar that sit in a slot just using gravity. The bar can sit at different heights and positions and and can be removed and replaced if need be. I decided to go wit baltic birch because it looks clean and minimal. 
-
-![conf_annot](/public/img/2020/01/pullup_plans.png)
+The thing that I found lacking with the other DIY home workout benches is that they either had storage or were adjustable. 
+None of them did both. This bench could much more easily be made as just a flat bench with storage. The final dimensions of this 
+bench is supposed to be 3ft long by 14" wide and roughly 18" high (with the cushion). 
 
 ## Steps
 
-1. Decide where you're gonna want the pull-up bar. Make sure it's somewhere where you have enough head clearance to do a pull-up. Mark off where the studs are using the studfinder. 
+1. First step is to build the inner frame that will provide the structure to the bench. This is made of 2x4s that are butt jointed 
+together using pocket screws. The frame won't be visible from the outside so it doesn't need to be nice wood. 
 
-2. Based on where the studs are relative to the wall you can figure out how long the boards need to be to hit two studs. For me there were studs at about 14" inches from the doorframe, so I made my wooden brackets 17" inches long so there was some meat between the supported part of the board and the edge. 
+    ![inner_structure](../public/img/2020/08/inner_structure.png)
 
-3. Mark the boards out and cut them using a jigsaw, tablesaw, chopsaw or whatever you have. 
+2. Next cut and attach the outer walls using a combination of pocket screws in the corners and screws between the baltic birch and the inner frame. 
+Make sure to hide the pocket screws in the interior. 
 
-4. Use the hole saw with the drill to remove the hole from where the pull-up bar will go. 
-
-5. Then use the jigsaw to cut a slot from the board edge to the hole.
-
-    ![holes](/public/img/2020/01/holes.jpg)
-
-6. Sand everything nice and smooth.
-
-7. After making sure to remove any sawdust residue, wipe the tung oil on in a thin layer and let dry. 
-
-8. Repeat **Step 7** twice more to get a thicker finish. 
-
-9. Attach the boards into the wall making sure everything is level across the hallway. Use at least three screws in a stud. Please make sure everything is good and secure.
-
-    ![one board mounted](/public/img/2020/01/onebracketmounted.jpg)
-
-
-10. Using the hacksaw, cut the steel pipe so it just fits between your walls. This will ensure as much pipe as possible is supported by the wood brackets. File the pipe down on the ends to remove any burrs in the steel. 
-
-    ![hacksaw](/public/img/2020/01/hacksaw.jpg)
-
-11. Put your steel pipe up between the two boards and you have your pull-up bar! 
-
-    ![all done](/public/img/2020/01/pullupbar_on_wall.jpg)
-
+    ![outer_walls](../public/img/2020/08/outer_walls.png)
+    
+3. 
 
 ## There you have it
 
-If you have a narrow enough hallway you too can have a custom pullup bar. I'm really happy with this design. It was inexpensive, it's out of the way and it meets all my design requirements. 
+Thanks for reading. 
 
-Most importantly, it holds my weight just fine!
-
-And there it is, a custom, hallway pull-up bar. Thanks for reading. 
 ![animation](/public/img/2020/01/pullup.gif)
+
+## Other Makers Links
+
+- [Instructables: Adjustable Bench](https://www.instructables.com/id/Weight-Bench-5-positionFlatIncline-doubles-as-/)
+- [Jamie Castiglio: Bench with Storage](https://jaimecostiglio.com/diy-workout-bench-with-storage/)
+- [Homemade Modern:  Gym in a Box](https://www.youtube.com/watch?v=H2UVZhbX074)
