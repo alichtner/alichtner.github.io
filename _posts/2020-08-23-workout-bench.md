@@ -60,12 +60,14 @@ This design represents a lot of thinking and planning and takes inspiration from
 - Two (2) 12.5" x 14" 3/4" Baltic Birch (D)
 - Two (2) 12.5" x 34.5" 3/4" Baltic Birch (E)
 - One (1) 14" x 36" 3/4" Baltic Birch (F)
+
 ---
 ### Adjustable Assembly
-- Two (2) 21" 2x2
-- Two (2) 12" 2x2
-- Two (2) 11.5" #8 Threaded Steel Rod
-- One (1) 9" #8 Threaded Steel Rod
+- Two (2) 21" 2x2 (G)
+- Two (2) 12" 2x2 (H)
+- Two (2) 11.5" #8 Threaded Steel Rod (I/J)
+- One (1) 9" #8 Threaded Steel Rod (K)
+    
 ---
 ### Seat
 - One (1) 14" x 23" 3/4" Baltic Birch (G)
@@ -81,10 +83,29 @@ bench is supposed to be 3ft long by 14" wide and roughly 18" high (with the cush
 
 ## Steps
 
-1. First step is to build the inner frame that will provide the structure to the bench. This is made of 2x4s that are butt jointed 
-together using pocket screws. The frame won't be visible from the outside so it doesn't need to be nice wood. You will use pieces A, B and C. 
+1. First step is to build the inner frame that will provide the structure to the bench. Cut pieces A, B and C to their proper lengths. 
 
-    ![inner_structure](../public/img/2020/08/inner_structure.png)
+2. Next take two of the A pieces. These will have additional details added to it to make the adjustment assembly work. Use a 3/8" bit to drill the holes through piece. Then use a jigsaw to cut out the triangles. These 
+are up to you where they go. They determine what angles are available for the seat to adjust to. Make sure that for the second adjustment piece you do the mirror image of what's shown here. 
+
+
+   ![cutouts](../public/img/2020/08/cutouts.png)
+
+
+3. Now assemble the frame 2x4s as shown below. I used pocket screws to put everything together, but through screws would work here as well.
+ The frame won't be visible from the outside so it doesn't need to be nice wood. You will use pieces A, B and C. 
+
+    ![inner_structure](../public/img/2020/08/frame.png)
+    
+4. We'll build the adjustment assembly next. This part required me a good amount of adjustments to get everything to work. Drill holes large enough for the #8 threaded rod to go through 
+.75" in from the end of both G pieces and both ends of the H pieces. Make sure this hole goes through perpendicular to the 2x2 faces. 
+
+5. Next drill the same diameter hold 11.25" up from the center of the first hole on both the G pieces. 
+This will act as the fulcrum point for the support arm pieces (H) to attach.
+
+    ![outer_walls](../public/img/2020/08/assembly.png)
+    ![outer_walls](../public/img/2020/08/frame_assembly_render.png)
+
 
 2. Next cut and attach the outer walls (Pieces D, E and F) using a combination of pocket screws in the corners and screws between the baltic birch and the inner frame. 
 Make sure to hide the pocket screws in the interior. 
@@ -97,7 +118,9 @@ the height of the casters for the final height. The ones for this design were 2.
 
     ![caster](../public/img/2020/08/caster.gif)
     
-4. Next we're going to create the adjustment assembly. This part required me a good amount of adjustments to get everything to work. 
+4. 
+
+6. To attach the assembly to the frame itself, drill the same diameter holes through both sides of the 2x4 frame 22.75" from the inside 
     
 ## There you have it
 
