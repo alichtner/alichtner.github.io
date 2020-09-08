@@ -127,7 +127,7 @@ Make sure to hide the pocket screws in the interior.
 to the bottom of the base. In the renderings I'm showing feet but I'd always planned to use locking casters. Make sure to take into account
 the height of the casters for the final height. The ones for this design were 2.5" inches tall and the entire design takes that into consideration.
 
-    ![casters](../public/img/2020/08/caster.gif)
+    ![casters](../public/img/2020/08/castersmall.gif)
 
 2. Attach the seat back.
 2. Make the seat
@@ -138,13 +138,9 @@ the height of the casters for the final height. The ones for this design were 2.
 
 ## There you have it
 
-I know this was a hard one but I'm really happy with how it came out. It checks all my boxes and I think it looks great. 
+I know this was a hard one but I'm really happy with how it came out. It checks all my boxes and I think it looks great. If anyone out there has or is looking to do something like this I'd love to know. 
 
-![closed](../public/img/2020/08/closed.jpg)
-![open](../public/img/2020/08/open.jpg)
-![open](../public/img/2020/08/storage.jpg)
-
-
+![closed](../public/img/2020/08/final_figure.png)
 
 ## Other Makers Links
 
