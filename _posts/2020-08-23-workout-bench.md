@@ -117,20 +117,22 @@ This will act as the fulcrum point for the support arm pieces (H) to attach.
 
 2. Now that the inner workings are all built we'll move on to cladding the frame with the outer walls. Cut and attach the outer walls (Pieces D, E and F) using a combination of pocket screws in the corners and screws between the baltic birch and the inner frame. Make sure to hide the pocket screws in the interior. 
 
-    ![outer_walls](../public/img/2020/08/outerwalls.png)
+    ![outer_walls](/public/img/2020/08/outerwalls.png)
     
 3. Attach some [heavy duty casters](https://www.amazon.com/Swivel-Caster-Wheels-Locking-Polyurethane/dp/B06Y49D2J2/ref=sxin_10?ascsubtag=amzn1.osa.b54557a1-1e55-4d28-9e82-050295431ec6.ATVPDKIKX0DER.en_US&creativeASIN=B06Y49D2J2&cv_ct_cx=heavy+duty+casters&cv_ct_id=amzn1.osa.b54557a1-1e55-4d28-9e82-050295431ec6.ATVPDKIKX0DER.en_US&cv_ct_pg=search&cv_ct_wn=osp-single-source-gl-ranking&dchild=1&keywords=heavy+duty+casters&linkCode=oas&pd_rd_i=B06Y49D2J2&pd_rd_r=1ea42fce-1bd8-46e9-ad64-c66519d68a91&pd_rd_w=hFAkR&pd_rd_wg=U9Xl8&pf_rd_p=69c78df1-b3ce-40ba-9ee0-ecaea903b011&pf_rd_r=9GNK33PT41BMV16CP4PX&qid=1598223053&sr=1-2-d9dc7690-f7e1-44eb-ad06-aebbef559a37&tag=cb-osp-20) 
 to the bottom of the base. In the renderings I'm showing feet but I'd always planned to use locking casters. Make sure to take into account
 the height of the casters for the final height. The ones for this design were 2.5" inches tall and the entire design takes that into consideration to reach the final height of 18".
 
-    ![casters](../public/img/2020/08/castersmall.gif)
+    ![casters](/public/img/2020/08/castersmall.gif)
 
 2. Cut the seat back (L) to size and attach this to the seat rails (G) using long wood screws. Make sure to align the top of the seat back with the outer edge of the bench walls so they are coincident. It took some finagling with clamps to get everything lined up before driving in the screws.  
 
-    ![attachseat](../public/img/2020/08/attachseat.png)
-
+    ![attachseatback](/public/img/2020/08/attachseat.png)
 
 2. For the seat portion to work properly it has to be able to slide back and forth, allowing the adustable back of the seat to move freely. I also wanted the seat to be easily removable. This was easily solved by attach 3 small pieces of wood (N/O) to the bottom of the seat (M). The pieces serve as guide rails for the sliding and a stopper so the seat doesn't slide too far out of back. 
+
+    ![seatassembly](/public/img/2020/08/seat.png)
+
 
 2. Now that all the wood components are built it's time to sand it all down. You'll likely want to sand down any sharp corners especially well to reduce the chance of injuring yourself when you're actually using the bench for working out. 
 
@@ -142,7 +144,7 @@ the height of the casters for the final height. The ones for this design were 2.
 
 ## There you have it
 
-I know this was a hard one but I'm really happy with how it came out. It checks all my boxes and I think it looks great. If anyone out there has or is looking to do something like this I'd love to know. 
+I know this was a hard one but I'm really happy with how it came out. It checks all my boxes and I think it looks great. If anyone out there has or is looking to do something like this I'd love to know. If you think I'm a bit crazy or could have accomplished this without all this work please let me know. 
 
 ![closed](../public/img/2020/08/final_figure.png)
 
@@ -151,3 +153,4 @@ I know this was a hard one but I'm really happy with how it came out. It checks 
 - [Instructables: Adjustable Bench](https://www.instructables.com/id/Weight-Bench-5-positionFlatIncline-doubles-as-/)
 - [Jamie Castiglio: Bench with Storage](https://jaimecostiglio.com/diy-workout-bench-with-storage/)
 - [Homemade Modern:  Gym in a Box](https://www.youtube.com/watch?v=H2UVZhbX074)
+
