@@ -39,6 +39,7 @@ As usual, I started with a list of project requirements and constraints.
 - Long Wood Screws
 - Heavy Duty Furniture Casters
 - Water-Based Polyurethane (or whatever finish you want)
+- 1/4" Thick Board for cushions
 - 1" Foam Badding
 - 2 yards of heavy-duty vinyl / faux leather
 
@@ -65,20 +66,19 @@ As usual, I started with a list of project requirements and constraints.
 - Two (2) 12.5" x 34.5" 3/4" Baltic Birch (E)
 - One (1) 14" x 36" 3/4" Baltic Birch (F)
 
----
 ### Adjustable Assembly
 - Two (2) 21" 2x2 (G)
 - Two (2) 12" 2x2 (H)
 - Two (2) 11.5" #8 Threaded Steel Rod (I/J)
 - One (1) 9" #8 Threaded Steel Rod (K)
-    
----
+
 ### Seat
 - One (1) 14" x 23" 3/4" Baltic Birch (L)
 - One (1) 14" x 12" 3/4" Baltic Birch (M)
 - Two (2) 1.5" x 4" 3/4" Baltic Birch (N)
 - One (1) 1.5" x 6" 3/4" Baltic Birch (O)
 
+---
 ## Design
 
 The thing that I found lacking with the other DIY home workout benches is that they either had storage or were adjustable. 
@@ -132,14 +132,19 @@ the height of the casters for the final height. The ones for this design were 2.
 2. Attach the seat back.
 2. Make the seat
 2. Finish everything with polyurethane
-2. Make the cushions
-2. Attach the cushions
+2. Make the cushions. To do this, take the thin 1/4" boards which should be cut to the dimensions of the seat top and the seat back. Cut the 1" foam badding to same dimensions. You're going to want to glue the foam badding down to the board somehow. I used wood glue, which worked ok but anyway you attach them should work. 
+
+2. Attach the cushions to the seat bottom and seat top using some short wood screws through the back of the boards. In this way the cusions should be firmly attached but the screws won't be visible.
 
 ## There you have it
 
-Thanks for reading. 
+I know this was a hard one but I'm really happy with how it came out. It checks all my boxes and I think it looks great. 
 
-![animation](/public/img/2020/01/pullup.gif)
+![closed](../public/img/2020/08/closed.jpg)
+![open](../public/img/2020/08/open.jpg)
+![open](../public/img/2020/08/storage.jpg)
+
+
 
 ## Other Makers Links
 
