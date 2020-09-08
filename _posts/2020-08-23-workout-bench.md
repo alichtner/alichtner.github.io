@@ -22,7 +22,7 @@ This design represents a lot of thinking and planning and takes inspiration from
 
 As usual, I started with a list of project requirements and constraints.
 
-- Sturdy workout bench that can support my weight
+- Sturdy, functional workout bench that can support my weight
 - Has an adjustable back for incline and seated exercises
 - Stores fitness equipment easily out of view
 - Mobile enough for moving in and out of the way
@@ -89,7 +89,7 @@ bench is supposed to be 3ft long by 14" wide and roughly 18" high (with the cush
 
 1. First step is to build the inner frame that will provide the structure to the bench. Cut pieces A, B and C to their proper lengths. 
 
-2. Next take two of the (A) pieces. These will have additional details added to it to make the adjustment assembly work. Use a 3/8" bit to drill the holes through piece. Then use a jigsaw to cut out the triangles as shown below. These 
+2. Next take two of the (A) pieces. These will have additional details added to it to make the adjustment assembly work. Use a 3/8" bit to drill the holes through piece. Then use a jigsaw to cut out the notches and triangles as shown below. These 
 are up to you where they go. They determine what angles are available for the seat to adjust to. Make sure that for the second adjustment piece you do is the mirror image of what's shown here. 
 
 
@@ -109,29 +109,33 @@ This will act as the fulcrum point for the support arm pieces (H) to attach.
 
     ![adjustment_assembly](/public/img/2020/08/assembly.png)
 
-6. Assemble the adjustment assembly carefully using washers and nuts on either side of every place where the 2x2s meet threaded rod. The threaded nuts will help keep the 2x2s all in alignment and allow everything to rotate freely. 
+6. Assemble the adjustment assembly carefully using washers and nuts on either side of every place where the 2x2s meet threaded rod. The threaded nuts will help keep the 2x2s all in alignment and allow everything to rotate freely. The final assembly should look similar to the rendering below.
 
     ![threading](/public/img/2020/08/threading.png)
-
-7. The final assembly should look similar to this rendering. Please note, I didn't put things together exactly in the same order since I was trying to figure things out as I was going. 
-
     ![frame_render](/public/img/2020/08/frame_assembly_render.png)
 
 
-2. Next cut and attach the outer walls (Pieces D, E and F) using a combination of pocket screws in the corners and screws between the baltic birch and the inner frame. 
-Make sure to hide the pocket screws in the interior. 
+2. Now that the inner workings are all built we'll move on to cladding the frame with the outer walls. Cut and attach the outer walls (Pieces D, E and F) using a combination of pocket screws in the corners and screws between the baltic birch and the inner frame. Make sure to hide the pocket screws in the interior. 
 
     ![outer_walls](../public/img/2020/08/outerwalls.png)
     
 3. Attach some [heavy duty casters](https://www.amazon.com/Swivel-Caster-Wheels-Locking-Polyurethane/dp/B06Y49D2J2/ref=sxin_10?ascsubtag=amzn1.osa.b54557a1-1e55-4d28-9e82-050295431ec6.ATVPDKIKX0DER.en_US&creativeASIN=B06Y49D2J2&cv_ct_cx=heavy+duty+casters&cv_ct_id=amzn1.osa.b54557a1-1e55-4d28-9e82-050295431ec6.ATVPDKIKX0DER.en_US&cv_ct_pg=search&cv_ct_wn=osp-single-source-gl-ranking&dchild=1&keywords=heavy+duty+casters&linkCode=oas&pd_rd_i=B06Y49D2J2&pd_rd_r=1ea42fce-1bd8-46e9-ad64-c66519d68a91&pd_rd_w=hFAkR&pd_rd_wg=U9Xl8&pf_rd_p=69c78df1-b3ce-40ba-9ee0-ecaea903b011&pf_rd_r=9GNK33PT41BMV16CP4PX&qid=1598223053&sr=1-2-d9dc7690-f7e1-44eb-ad06-aebbef559a37&tag=cb-osp-20) 
 to the bottom of the base. In the renderings I'm showing feet but I'd always planned to use locking casters. Make sure to take into account
-the height of the casters for the final height. The ones for this design were 2.5" inches tall and the entire design takes that into consideration.
+the height of the casters for the final height. The ones for this design were 2.5" inches tall and the entire design takes that into consideration to reach the final height of 18".
 
     ![casters](../public/img/2020/08/castersmall.gif)
 
-2. Attach the seat back.
-2. Make the seat
-2. Finish everything with polyurethane
+2. Cut the seat back (L) to size and attach this to the seat rails (G) using long wood screws. Make sure to align the top of the seat back with the outer edge of the bench walls so they are coincident. It took some finagling with clamps to get everything lined up before driving in the screws.  
+
+    ![attachseat](../public/img/2020/08/attachseat.png)
+
+
+2. For the seat portion to work properly it has to be able to slide back and forth, allowing the adustable back of the seat to move freely. I also wanted the seat to be easily removable. This was easily solved by attach 3 small pieces of wood (N/O) to the bottom of the seat (M). The pieces serve as guide rails for the sliding and a stopper so the seat doesn't slide too far out of back. 
+
+2. Now that all the wood components are built it's time to sand it all down. You'll likely want to sand down any sharp corners especially well to reduce the chance of injuring yourself when you're actually using the bench for working out. 
+
+2. Apply a finish everywhere that's visible. Let it dry, sand once again and apply more finish. Do this until you're satisfied with the level of finish. 
+
 2. Make the cushions. To do this, take the thin 1/4" boards which should be cut to the dimensions of the seat top and the seat back. Cut the 1" foam badding to same dimensions. You're going to want to glue the foam badding down to the board somehow. I used wood glue, which worked ok but anyway you attach them should work. 
 
 2. Attach the cushions to the seat bottom and seat top using some short wood screws through the back of the boards. In this way the cusions should be firmly attached but the screws won't be visible.
