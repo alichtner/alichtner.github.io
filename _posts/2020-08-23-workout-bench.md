@@ -84,7 +84,9 @@ As usual, I started with a list of project requirements and constraints.
 
 The thing that I found lacking with the other DIY home workout benches is that they either had storage or were adjustable. 
 None of them did both. This bench could much more easily be made as just a flat bench with storage. The final dimensions of this 
-bench is supposed to be 3ft long by 14" wide and roughly 18" high (with the cushion). The bench is designed with casters so it can easily be rolled in and out of the way. 
+bench is supposed to be 3ft long by 14" wide and roughly 18" high (with the cushion). The bench is designed with casters (not shown) so it can easily be rolled in and out of the way. 
+
+   ![moving design](/public/img/2020/08/design.gif)
 
 ## Steps
 
@@ -145,12 +147,12 @@ the height of the casters for the final height. The ones for this design were 2.
 
 2. We're almost at the end. It's time to make the cushions. To do this, take the thin 1/4" boards which should be cut to the dimensions of the seat top and the seat back. Cut the 1" foam badding to same dimensions. You're going to want to glue the foam badding down to the board somehow. I used wood glue, which worked ok but anyway you attach them should work. 
 
-2. Cut your upholstery material about 3 to 4 inches larger than the board in every direction. Lay the material face down, then lay the board and foam padding on top so that the board is on top. Pulling as taut as you can, staple the material into the board. Think of wrapping a present when you do this so you can get nice corners. I used LOTS of staples. 
+2. Cut your upholstery material about 3 to 4 inches larger than the back and seat boards in every direction. Lay the material face down, then lay the boards and foam padding on top so that the boards are facing out. Pulling as taut as you can, staple the material into the boards. Think of wrapping a present when you do this so you can get nice corners. I used LOTS of staples. 
 
     ![upholstery](/public/img/2020/08/upholstering.png)
 
 
-2. Finally, attach the cushions to the seat bottom and seat top using some short wood screws through the back of the boards. In this way the cusions should be firmly attached but the screws won't be visible.
+2. Finally, attach the cushions to the seat bottom and seat back using some short wood screws through the back of the boards. In this way the cushions should be firmly attached but the screws won't be visible.
 
 ## There you have it
 
