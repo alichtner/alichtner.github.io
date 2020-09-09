@@ -4,7 +4,9 @@ comments: true
 date: 2020-08-23
 layout: post
 slug: workout-bench
+project: true
 title: DIY Adjustable Workout Bench + Storage
+image: /public/img/2020/08/weightbench.png
 tags: woodworking fitness maker diy covid
 ---
 
