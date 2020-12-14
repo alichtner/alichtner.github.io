@@ -5,7 +5,7 @@ date: 2020-12-12
 layout: page
 url: cookies2020/
 slug: cookies2020
-title: Aaron's Holiday Cookie Guide
+# title: Aaron's Holiday Cookie Guide
 project: true
 image: /public/img/2020/12/sable.jpg
 tags: 3dprinting cookies grateful holidays
@@ -35,7 +35,7 @@ Recipes:
 
 These are a Jewish cookie from New York City. It's a soft-vanilla cookie made with sour cream with two colored icings on top of it.
 
-![Black and White Cookie](/public/img/12/bw.jpg) 
+![Black and White Cookie](/public/img/2020/12/bw.jpg) 
 
 ### Orange-Glazed Gingerbread Cookies
 
@@ -62,7 +62,7 @@ This is the same rugelach dough, just with strawberry jam in it.
 
 ![Strawberry Rugelach](/public/img/2020/12/rugelach2.jpg) 
 
-# Pistachio-Chocolate Sable Cookies
+### Pistachio-Chocolate Sable Cookies
 
 [Recipe from Bon Appetit](https://www.bonappetit.com/recipe/chocolate-pistachio-sables)
 
@@ -70,7 +70,7 @@ So these are really rich chocolate cookies with pistachios in it. I tore my thum
 
 ![Pistachio Chocolate Sable Cookies](/public/img/2020/12/sable.jpg) 
 
-# Raspberry-Cardamon Cookie Bars
+### Raspberry-Cardamon Cookie Bars
 
 Recipe from a screenshot my my sent of the LA Times]
 
