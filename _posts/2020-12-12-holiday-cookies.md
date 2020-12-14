@@ -5,7 +5,7 @@ date: 2020-12-12
 layout: page
 url: cookies2020/
 slug: cookies2020
-title: Aaron's Holiday Cookie Guide
+title: My Holiday Cookie Box
 project: true
 image: /public/img/2020/12/sable.jpg
 tags: 3dprinting cookies grateful holidays
@@ -14,7 +14,9 @@ hidden: true
 
 ## Dear Friends and Family,
 
-2020 is coming to a close and I think we'd all agree that it's been a tough year. I normally don't really do gifts but this year I wanted to do something different. When I was young, one of our neighbors made us a cookie plate every year and I always really enjoyed it. I thought it'd be nice to do something special for the people that have helped make this year a little bit better. Like everyone, I've been doing a lot of baking so here's a bunch of the recipes I've really enjoyed. I look forward to spending more time, in-person with everyone in the future. 
+2020 is coming to a close and I think we'd all agree that it's been a tough year. I normally don't really do gifts but this year I wanted to do something different. 
+
+If COVID has taught me anthing, it's to recognize the small joys. Well, I don't think there's anything more apt to represent small joys than cookies. I thought it'd be nice to do something special for the people that have helped make this year a little bit better. I look forward to spending more time, in-person, with everyone in the future. 
 
 Happy Hannukah 
 and 
@@ -26,9 +28,11 @@ P.S. I'd love to hear which cookies you like.
 
 P.P.S. Some people are getting their cookies shipped, hopefully they don't get too stale. 
 
+P.P.P.S. Yes, I know I'm extra. :p
+
 ---
 
-Recipes:
+# Recipes:
 
 ### Black and Whites
 
@@ -73,7 +77,7 @@ So these are really rich chocolate cookies with pistachios in it. I tore my thum
 
 ### Raspberry-Cardamon Cookie Bars
 
-Recipe from a screenshot my my sent of the LA Times]
+Recipe from a screenshot my mom sent of the LA Times
 
 These were a late addition to the recipe line-up but I really liked them. 
 
