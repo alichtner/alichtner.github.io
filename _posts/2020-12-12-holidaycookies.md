@@ -3,10 +3,12 @@ author: Aaron Lichtner
 comments: false
 date: 2020-12-12 
 layout: page
-url: holidaycookies2020/
-slug: holidaycookies2020
+url: cookies2020/
+slug: cookies2020
 title: Aaron's Holiday Cookie Guide
-image: https://qph.fs.quoracdn.net/main-qimg-9b07ca51108888dd05f604a2bfa282ba-c
+project: true
+image: /public/img/2020/12/sable.jpg
+tags: 3dprinting cookies grateful holidays
 ---
 
 ## Dear Friends and Family,
@@ -42,7 +44,7 @@ These are a Jewish cookie from New York City. It's a soft-vanilla cookie made wi
 
 Ok, so I don't really like gingerbread. Except I LOVE these. I even 3D-printed a mold to put a pattern in the top. 
 
-![Gingerbread Cookkies](/public/img/12/ginger.jpg) 
+![Gingerbread Cookkies](/public/img/2020/12/ginger.jpg) 
 
 ### Walnut Rugelach
 
@@ -50,7 +52,7 @@ Ok, so I don't really like gingerbread. Except I LOVE these. I even 3D-printed a
 
 These are also a Jewish cookie. The dough is special since it's made with cream cheese in it. They are coated in apricot jam, walnuts, cinnaomon and sugar and rolled into crescents.
 
-![Walnut Rugelach](/public/img/12/rugelach.jpg) 
+![Walnut Rugelach](/public/img/2020/12/rugelach.jpg) 
 
 ### Strawberry Rugelach
 
@@ -58,7 +60,7 @@ These are also a Jewish cookie. The dough is special since it's made with cream 
 
 This is the same rugelach dough, just with strawberry jam in it.
 
-![Strawberry Rugelach](/public/img/12/rugelach2.jpg) 
+![Strawberry Rugelach](/public/img/2020/12/rugelach2.jpg) 
 
 # Pistachio-Chocolate Sable Cookies
 
@@ -66,7 +68,7 @@ This is the same rugelach dough, just with strawberry jam in it.
 
 So these are really rich chocolate cookies with pistachios in it. I tore my thumbnail superbad shelling the nuts for this, so you better like them!
 
-![Pistachio Chocolate Sable Cookies](/public/img/12/sable.jpg) 
+![Pistachio Chocolate Sable Cookies](/public/img/2020/12/sable.jpg) 
 
 # Raspberry-Cardamon Cookie Bars
 
@@ -74,6 +76,6 @@ Recipe from a screenshot my my sent of the LA Times]
 
 These were a late addition to the recipe line-up but I really liked them. 
 
-![Raspberry-Cardamon Cookie Bars](/public/img/12/raspberry.jpg) 
+![Raspberry-Cardamon Cookie Bars](/public/img/2020/12/raspberry.jpg) 
 
 
