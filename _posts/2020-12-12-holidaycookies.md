@@ -5,10 +5,11 @@ date: 2020-12-12
 layout: page
 url: cookies2020/
 slug: cookies2020
-# title: Aaron's Holiday Cookie Guide
+title: Aaron's Holiday Cookie Guide
 project: true
 image: /public/img/2020/12/sable.jpg
 tags: 3dprinting cookies grateful holidays
+hidden: true
 ---
 
 ## Dear Friends and Family,
