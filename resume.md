@@ -7,15 +7,24 @@ slug: resume
 title: Resume
 ---
 
-[Resume pdf form (Click Me!)](http://aaronlichtner.com/wp-content/uploads/2014/10/resume_AaronLichtner.pdf)
+[Resume pdf form (Click Me!)](https://drive.google.com/file/d/1nK0ZmjR3Zkl-fhrqySEzkUb-ODttVXXi/view?usp=sharing)
 
 # Data Science | Materials Science | Design
 
 ## Experience
 
+#### Senior Data Scientist | Nordstrom | Seattle, WA 2020
+
+  * Led assortment health initiative to provide buyers with diagnostics and recommendations how to improve the health of our multi-channel assortment using forecasting and optimization techniques
+  * Built on-order classification model to recommend cancellations due to COVID
+  * Designed and built prototype assortment optimization process using a genetic algorithm to create
+possible assortments from thousands of products
+
 #### Data Scientist II | Nordstrom | Seattle, WA | 2018 - Present
 
   * Technical lead data scientist for the team developing "Look" algorithms
+  * Developed tool to reduce carbon-cost from shipping by suggesting items from closer fulfillment centers
+  * Designed and built algorithm to rank outfits for customers based on their style preference 
 
 #### Data Scientist I | Nordstrom | Seattle, WA | 2016 - 2018
 
