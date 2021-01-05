@@ -116,11 +116,11 @@ _California Polytechnic State University_
 
 ### Published
 
-* Lichtner A, Bordia R, et al., **[Processing of Hierarchical and Anisotropic LSM-YSZ Ceramics](http://aaronlichtner.com/wp-content/uploads/2014/10/Lichtner-et-al-paper-in-J-Am-Ceram-Soc-.pdf)**  - Journal of the American Ceramics Society 96 (2013) 2745-2753
+* Lichtner A, Bordia R, et al., **[Processing of Hierarchical and Anisotropic LSM-YSZ Ceramics](/public/files/Lichtner-et-al-paper-in-J-Am-Ceram-Soc-.pdf)**  - Journal of the American Ceramics Society 96 (2013) 2745-2753
 
-* Lichtner A,Roussel D, et al., **[Dispersion, Connectivity and Tortuosity of Hierarchical Porosity Composite SOFC Cathodes Prepared by Freeze-Casting](http://aaronlichtner.com/wp-content/uploads/2014/10/Lichtner_Dispersion.pdf)** - Journal of the European Ceramics Society 35, 2 (2015) 585-595
+* Lichtner A,Roussel D, et al., **[Dispersion, Connectivity and Tortuosity of Hierarchical Porosity Composite SOFC Cathodes Prepared by Freeze-Casting](/public/files/Lichtner_Dispersion.pdf)** - Journal of the European Ceramics Society 35, 2 (2015) 585-595
 
-* Roussel D, Lichtner A, et al.,**[Effective transport properties of 3D multi-component microstructures with interface resistance](http://aaronlichtner.com/wp-content/uploads/2014/10/Roussel15a.pdf)** **Computational Materials Science 96 (2015) 277-283
+* Roussel D, Lichtner A, et al.,**[Effective transport properties of 3D multi-component microstructures with interface resistance](/public/files/Roussel15a.pdf)** **Computational Materials Science 96 (2015) 277-283
 
 * Villanova J, Lichtner A, et al., **Multi-scale 3D imaging of absorbing porous materials for solid oxide fuel cells**, Journal of Materials Science (2014)
 
