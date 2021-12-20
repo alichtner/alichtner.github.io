@@ -13,6 +13,11 @@ title: Resume
 
 ## Experience
 
+#### Senior Data Scientist | ShelfEngine | Seattle, WA 2021
+
+  * Technical lead for inventory and waste modeling
+  * Refactored forecasting pipeline code enabling account-level customization
+
 #### Senior Data Scientist | Nordstrom | Seattle, WA 2020
 
   * Led assortment health initiative to provide buyers with diagnostics and recommendations how to improve the health of our multi-channel assortment using forecasting and optimization techniques
