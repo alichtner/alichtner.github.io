@@ -127,7 +127,9 @@ _California Polytechnic State University_
 
 ### Published
 
-* Lichtner A, Bordia R, et al., **[Processing of Hierarchical and Anisotropic LSM-YSZ Ceramics](/public/files/Lichtner-et-al-paper-in-J-Am-Ceram-Soc-.pdf)**  - Journal of the American Ceramics Society 96 (2013) 2745-2753
+* Lichtner A, Roussel D, et al., **[Anisotropic sintering behavior of freeze-cast ceramics by optical dilatometry and discrete-element simulations](https://www.sciencedirect.com/science/article/abs/pii/S135964541830466X)** - Acta Materialia 155, 15 (2018) 343-349
+
+* Lichtner A, Roussel D, et al., **[Effect of macro-pore anisotropy on the mechanical response of hierarchically porous ceramics](https://ceramics.onlinelibrary.wiley.com/doi/abs/10.1111/jace.14004)** - Journal of the American Ceramics Society 99, 3 (2015) 979-987
 
 * Lichtner A,Roussel D, et al., **[Dispersion, Connectivity and Tortuosity of Hierarchical Porosity Composite SOFC Cathodes Prepared by Freeze-Casting](/public/files/Lichtner_Dispersion.pdf)** - Journal of the European Ceramics Society 35, 2 (2015) 585-595
 
@@ -135,17 +137,11 @@ _California Polytechnic State University_
 
 * Villanova J, Lichtner A, et al., **Multi-scale 3D imaging of absorbing porous materials for solid oxide fuel cells**, Journal of Materials Science (2014)
 
+* Lichtner A, Bordia R, et al., **[Processing of Hierarchical and Anisotropic LSM-YSZ Ceramics](/public/files/Lichtner-et-al-paper-in-J-Am-Ceram-Soc-.pdf)**  - Journal of the American Ceramics Society 96 (2013) 2745-2753
+
 * Jauffrés D, Lichtner A, et al., **Simulation of the elastic properties of porous ceramics with realistic microstructure**, Modeling and Simulation in Materials Science and Engineering 20, 4 (2012)
 
 * Jauffrés D, Lichtner A, et al., **Simulation of the toughness of partially sintered ceramics with realistic microstructure**, 60, 12 (2012) 4685-4694
-
-### In Preparation
-
-* Lichtner A, Roussel D, et al., **Effect of macro-pore anisotropy on the mechanical response of hierarchically porous ceramics**
-
-* Lichtner A, Roussel D, et al., **Mechanical behavior of realistic freeze-cast structure built using the discrete element method**
-
-* Lichtner A, Roussel D, et al., **Sintering anisotropy of directionally frozen porous ceramics by optical dilatometry**
 
 ## Talks and Presentations
     
