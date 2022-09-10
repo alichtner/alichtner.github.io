@@ -9,10 +9,13 @@ title: Resume
 
 [Resume pdf form (Click Me!)](https://drive.google.com/file/d/1nK0ZmjR3Zkl-fhrqySEzkUb-ODttVXXi/view?usp=sharing)
 
-# Data Science | Materials Science | Design
+# Data Science | Materials Engineering | Design
 
 ## Experience
 
+#### Principal Data Scientist | ShelfEngine | Seattle, WA 2022
+
+  * Primary developer of multiple inventory and waste prediction models
 #### Senior Data Scientist | ShelfEngine | Seattle, WA 2021
 
   * Technical lead for inventory and waste modeling
