@@ -127,13 +127,15 @@ _California Polytechnic State University_
 
 ### Published
 
+* **[Ranking Looks at Nordstrom using Machine Learning](https://medium.com/tech-at-nordstrom/ranking-looks-at-nordstrom-using-machine-learning-b62d0b8b42b3)** - Medium.com, Published by *Tech at Nordstrom* (2019)
+
 * Lichtner A, Roussel D, et al., **[Anisotropic sintering behavior of freeze-cast ceramics by optical dilatometry and discrete-element simulations](https://www.sciencedirect.com/science/article/abs/pii/S135964541830466X)** - Acta Materialia 155, 15 (2018) 343-349
 
 * Lichtner A, Roussel D, et al., **[Effect of macro-pore anisotropy on the mechanical response of hierarchically porous ceramics](https://ceramics.onlinelibrary.wiley.com/doi/abs/10.1111/jace.14004)** - Journal of the American Ceramics Society 99, 3 (2015) 979-987
 
 * Lichtner A,Roussel D, et al., **[Dispersion, Connectivity and Tortuosity of Hierarchical Porosity Composite SOFC Cathodes Prepared by Freeze-Casting](/public/files/Lichtner_Dispersion.pdf)** - Journal of the European Ceramics Society 35, 2 (2015) 585-595
 
-* Roussel D, Lichtner A, et al.,**[Effective transport properties of 3D multi-component microstructures with interface resistance](/public/files/Roussel15a.pdf)** **Computational Materials Science 96 (2015) 277-283
+* Roussel D, Lichtner A, et al.,**[Effective transport properties of 3D multi-component microstructures with interface resistance](/public/files/Roussel15a.pdf)** Computational Materials Science 96 (2015) 277-283
 
 * Villanova J, Lichtner A, et al., **Multi-scale 3D imaging of absorbing porous materials for solid oxide fuel cells**, Journal of Materials Science (2014)
 
