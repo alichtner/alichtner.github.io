@@ -10,12 +10,7 @@ title: About
 
 ### Data Science
 
-I am a data scientist with a strong background in research, analytics, data visualization, modeling, statistics, and machine learning. I enjoy tackling complex problems and presenting my findings through rich visuals to a variety of audiences.
-
-
-### Design and Prototyping Services
-
-I am now offering 3D design and prototyping services. I offer 3D printing in a variety of materials, laser cutting, and milling work. Please contact me if you are in need of any of these for your own work.
+I am a data scientist with a strong background in engineering, analytics, data visualization, modeling, statistics, and machine learning. I enjoy tackling complex problems and presenting my findings through rich visuals to a variety of audiences.
 
 
 ### Materials Science and Engineering

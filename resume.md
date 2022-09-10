@@ -13,13 +13,16 @@ title: Resume
 
 ## Experience
 
-#### Principal Data Scientist | ShelfEngine | Seattle, WA 2022
+#### Principal Data Scientist | Shelf Engine | Seattle, WA 2022
 
-  * Primary developer of multiple inventory and waste prediction models
-#### Senior Data Scientist | ShelfEngine | Seattle, WA 2021
+  * Primary developer of multiple inventory including modeling inventory through simulations
+
+#### Senior Data Scientist | Shelf Engine | Seattle, WA 2021
 
   * Technical lead for inventory and waste modeling
   * Refactored forecasting pipeline code enabling account-level customization
+  * Built a stockout prediction model to estimate stockouts when no inventory data is available
+  * Took cold-start mapping from an entirely manual process to one that's totally automated
 
 #### Senior Data Scientist | Nordstrom | Seattle, WA 2020
 
