@@ -19,6 +19,7 @@ plugins: [jekyll-feed, jekyll-paginate]
 header_pages:
  - about.md
  - resume.md
+ - gallery.md
  - projects.md
  - contact.md
 
