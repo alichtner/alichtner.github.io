@@ -11,3 +11,4 @@ image: /public/img/2023/3/fatcork.jpg
 ---
 
 ![Fatcork Marker](/public/img/2023/3/fatcork.jpg) 
+![What a snack!](/public/img/2023/3/snack.jpg) 
