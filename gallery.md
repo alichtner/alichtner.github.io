@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Art Gallery
+title: Gallery
 ---
 
 <div class="gridcontainer">
