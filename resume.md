@@ -13,25 +13,25 @@ title: Resume
 
 ## Experience
 
-#### Principal Data Scientist | Shelf Engine | Seattle, WA 2022
+#### Principal Data Scientist | Shelf Engine | Seattle, WA | 2022 - Present
 
   * Primary developer of multiple inventory including modeling inventory through simulations
 
-#### Senior Data Scientist | Shelf Engine | Seattle, WA 2021
+#### Senior Data Scientist | Shelf Engine | Seattle, WA | 2021
 
   * Technical lead for inventory and waste modeling
   * Refactored forecasting pipeline code enabling account-level customization
   * Built a stockout prediction model to estimate stockouts when no inventory data is available
   * Took cold-start mapping from an entirely manual process to one that's totally automated
 
-#### Senior Data Scientist | Nordstrom | Seattle, WA 2020
+#### Senior Data Scientist | Nordstrom | Seattle, WA | 2020
 
   * Led assortment health initiative to provide buyers with diagnostics and recommendations how to improve the health of our multi-channel assortment using forecasting and optimization techniques
   * Built on-order classification model to recommend cancellations due to COVID
   * Designed and built prototype assortment optimization process using a genetic algorithm to create
 possible assortments from thousands of products
 
-#### Data Scientist II | Nordstrom | Seattle, WA | 2018 - Present
+#### Data Scientist II | Nordstrom | Seattle, WA | 2018 - 2019
 
   * Technical lead data scientist for the team developing "Look" algorithms
   * Developed tool to reduce carbon-cost from shipping by suggesting items from closer fulfillment centers
