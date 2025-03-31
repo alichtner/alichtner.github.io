@@ -304,12 +304,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll-feed (~> 0.6)
-  jekyll-paginate
-  minima (~> 2.0)
-  rexml
-  tzinfo-data
-  webrick
 
 BUNDLED WITH
    2.6.6
