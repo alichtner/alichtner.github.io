@@ -4,10 +4,10 @@ tagline: 'I like to make stuff'
 description: 'I like to make stuff'
 
 baseurl: ""
-url: ""
+url: "https://www.aaronlichtner.com"
 github_username:  alichtner
 linkedin_username: aaronlichtner
-github_repo: github.com/alichtner.github.io
+github_repo: https://github.com/alichtner/alichtner.github.io
 emailme: mailto:alichtner@gmail.com
 instagram_handle: seattlefreezer
 
