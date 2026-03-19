@@ -5,7 +5,7 @@ date: 2015-11-04
 layout: post
 slug: exploring-pot
 title: Analyzing the relationship between retail pot sales and call-center data
-image: http://aaronlichtner.com/wp-content/uploads/2015/11/weed_actual.png
+image: https://www.aaronlichtner.com/wp-content/uploads/2015/11/weed_actual.png
 tags: R leaflet geodata marijuana
 ---
 

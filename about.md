@@ -20,4 +20,4 @@ I earned a Ph.D. in Materials Science and Engineering in 2015 from the Universit
 
 ### Passions
 
-Creativity has always been important to me and over the years I've dabbled in everything from graphic design and photography to [vocal music](../a-cappella-arrangements/) and [cooking](http://recipes.aaronlichtner.com).
+Creativity has always been important to me and over the years I've dabbled in everything from graphic design and photography to [vocal music](../a-cappella-arrangements/) and [cooking](https://recipes.aaronlichtner.com).
