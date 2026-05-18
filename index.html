@@ -37,6 +37,7 @@ title: Home
   <!-- Normal posts listed in the order of time -->
 
   {% for post in paginator.posts %}
+  {% unless post.hidden %}
   {% if post.lang %}
   <div class="post" lang="{{post.lang}}">
   {% else %}
@@ -59,9 +60,13 @@ title: Home
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
 
-    {{ post.content }}
+    {{ post.excerpt }}
+    {% if post.content != post.excerpt %}
+      <p><a href="{{ post.url }}">Read more &rarr;</a></p>
+    {% endif %}
   </div>
   <hr>
+  {% endunless %}
   {% endfor %}
 </div>
 
