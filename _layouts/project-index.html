@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<div class="page">
+  <h1 class="page-title">{{ page.title }}</h1>
+
+  {{ content }}
+
+  <div class="posts">
+    {% assign tag = page.project_tag %}
+    {% for post in site.posts %}
+      {% if post.tags contains tag %}
+        <div class="post">
+          <h1 class="post-title">
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h1>
+          <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+          {{ post.excerpt }}
+        </div>
+        <hr>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
