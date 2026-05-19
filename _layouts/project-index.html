@@ -6,19 +6,63 @@ layout: default
 
   {{ content }}
 
+  {% assign tag = page.project_tag %}
+  {% assign tag_posts = site.posts | where_exp: "post", "post.tags contains tag" %}
+
+  {% if page.show_summary_table %}
+  <h2>Summary</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Recipe</th>
+        <th>Category</th>
+        <th>Sub-category</th>
+        <th>Source</th>
+        <th style="text-align:center">Rating</th>
+        <th style="text-align:center">Make Again?</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for post in tag_posts %}
+      {% unless post.project %}
+      <tr>
+        <td>{{ post.date | date: "%Y-%m-%d" }}</td>
+        <td><a href="{{ post.url }}">{{ post.title }}</a></td>
+        <td>{{ post.category }}</td>
+        <td>{{ post.subcategory }}</td>
+        <td>{% if post.source_url %}<a href="{{ post.source_url }}">{{ post.source_name }}</a>{% else %}{{ post.source_name }}{% endif %}</td>
+        <td style="text-align:center">{{ post.rating }}</td>
+        <td style="text-align:center">{{ post.make_again }}</td>
+      </tr>
+      {% endunless %}
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <hr>
+  {% endif %}
+
   <div class="posts">
-    {% assign tag = page.project_tag %}
-    {% for post in site.posts %}
-      {% if post.tags contains tag %}
-        <div class="post">
-          <h1 class="post-title">
-            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          </h1>
-          <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-          {{ post.excerpt }}
-        </div>
-        <hr>
-      {% endif %}
+    {% for post in tag_posts %}
+    {% unless post.project %}
+      <div class="post">
+        <h1 class="post-title">
+          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h1>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        {% if page.full_content %}
+          {{ post.content | markdownify }}
+        {% else %}
+          {{ post.excerpt | markdownify }}
+          {% if post.content != post.excerpt %}
+            <p><a href="{{ post.url }}">Read more &rarr;</a></p>
+          {% endif %}
+        {% endif %}
+      </div>
+      <hr>
+    {% endunless %}
     {% endfor %}
   </div>
 </div>

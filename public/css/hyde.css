@@ -247,3 +247,25 @@ a.sidebar-nav-item:focus {
 .theme-base-0f .related-posts li a:hover {
   color: #8f5536;
 }
+
+
+/*
+ * Post thumbnail (home page feed)
+ *
+ * Floats the hero image left so text wraps beside it.
+ */
+
+.post-thumbnail {
+  float: left;
+  display: inline;
+  width: 38%;
+  max-width: 220px;
+  margin: 0.2rem 1.5rem 0.75rem 0;
+  border-radius: 5px;
+}
+
+.post-thumbnail-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}

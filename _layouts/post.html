@@ -12,8 +12,7 @@ layout: default
   <span class="post-tags">
     [&nbsp;
     {% for tag in page.tags %}
-      {% capture tag_name %}{{ tag }}{% endcapture %}
-      <a class="no-underline" href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
+      {% include tag_link.html tag=tag %}
     {% endfor %}
     ]
   </span>
