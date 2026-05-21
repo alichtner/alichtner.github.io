@@ -5,7 +5,7 @@ date: 2026-05-08
 layout: post
 title: "Brown Butter Chocolate Chip Cookies"
 tags: baking
-image: /public/img/2026/05/brown-butter-chocolate-chip-jamel.jpg
+image: /public/img/2026/05/brown-butter-chocolate-chip-cookies.jpg
 category: Desserts
 subcategory: Cookies
 source_name: NYT
@@ -27,4 +27,4 @@ description: "Brown butter and bigger chocolate chunks make these stand out — 
 
 **For next time.** Used a semi-sweet and milk chocolate from a nearby specialty store. Next time: increase the brown sugar and salt, and go 70% milk chocolate / 30% semi-sweet.
 
-![Brown Butter Chocolate Chip Cookies](/public/img/2026/05/brown-butter-chocolate-chip-jamel.jpg)
+![Brown Butter Chocolate Chip Cookies](/public/img/2026/05/brown-butter-chocolate-chip-cookies.jpg)
