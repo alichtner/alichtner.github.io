@@ -1,0 +1,316 @@
+---
+layout: map
+title: Transit Map Editor
+permalink: /transit-map/editor/
+---
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="/transit-map/data/stops.js"></script>
+<script src="/transit-map/data/lines.js"></script>
+<script src="/transit-map/data/locations.js"></script>
+
+<style>
+  #editor-panel, #editor-panel * { box-sizing: border-box; }
+
+  #editor-panel {
+    width: 300px;
+    min-width: 300px;
+    height: 100%;
+    overflow-y: auto;
+    background: #fff;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.08);
+    padding: 16px 14px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-family: "PT Sans", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    color: #515151;
+  }
+
+  #map-editor { flex: 1; height: 100%; }
+
+  .ep-title    { font-size: 14px; font-weight: bold; color: #313131; margin: 0; }
+  .ep-subtitle { font-size: 11px; color: #9a9a9a; margin-top: 2px; }
+
+  .ep-label {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9a9a9a;
+    margin-bottom: 6px;
+  }
+
+  .ep-mode-group { display: flex; gap: 4px; }
+  .ep-mode-btn {
+    flex: 1; padding: 5px 0;
+    border: 1px solid #e5e5e5; background: #f9f9f9;
+    color: #515151; font-size: 12px; font-family: inherit;
+    cursor: pointer; border-radius: 2px; text-align: center;
+    transition: background 0.12s, color 0.12s;
+  }
+  .ep-mode-btn.active { background: #268bd2; border-color: #268bd2; color: #fff; font-weight: bold; }
+
+  #ep-selected {
+    background: #f9f9f9; border: 1px solid #e5e5e5;
+    border-radius: 2px; padding: 10px; min-height: 68px;
+  }
+  #ep-selected-name   { font-weight: bold; color: #313131; font-size: 13px; margin-bottom: 4px; }
+  #ep-selected-coords { font-family: Menlo, Monaco, "Courier New", monospace; font-size: 11px; color: #268bd2; }
+  #ep-selected-hint   { font-size: 11px; color: #aaa; font-style: italic; }
+
+  #ep-probe { font-size: 11px; color: #9a9a9a; }
+  #ep-probe-val { font-family: Menlo, Monaco, "Courier New", monospace; color: #268bd2; }
+
+  #ep-output {
+    font-family: Menlo, Monaco, "Courier New", monospace;
+    font-size: 10px; color: #515151;
+    background: #f9f9f9; border: 1px solid #e5e5e5;
+    border-radius: 2px; padding: 8px;
+    width: 100%; height: 200px; resize: vertical; line-height: 1.4;
+  }
+
+  #ep-copy-btn {
+    width: 100%; padding: 7px 0;
+    background: #313131; color: #fff; border: none; border-radius: 2px;
+    font-family: inherit; font-size: 12px; font-weight: bold;
+    cursor: pointer; transition: background 0.12s;
+  }
+  #ep-copy-btn:hover  { background: #268bd2; }
+  #ep-copy-btn.copied { background: #27ae60; }
+
+  .ep-note { font-size: 10px; color: #bbb; line-height: 1.6; }
+  .ep-note code {
+    font-family: Menlo, Monaco, monospace; background: #f9f9f9;
+    border: 1px solid #e5e5e5; padding: 1px 4px; border-radius: 2px;
+    font-size: 9px; color: #9a9a9a;
+  }
+
+  /* Make sure Leaflet drag-marker cursor shows */
+  .leaflet-marker-draggable { cursor: grab !important; }
+  .leaflet-marker-draggable:active { cursor: grabbing !important; }
+</style>
+
+<div id="editor-panel">
+  <div>
+    <div class="ep-title">Map Editor</div>
+    <div class="ep-subtitle">Drag any marker to reposition it</div>
+  </div>
+
+  <div>
+    <div class="ep-label">Editing layer</div>
+    <div class="ep-mode-group">
+      <button class="ep-mode-btn active" id="btn-stops"  onclick="setMode('stops')">🚈 Stations</button>
+      <button class="ep-mode-btn"        id="btn-locs"   onclick="setMode('locations')">📍 Locations</button>
+    </div>
+  </div>
+
+  <div>
+    <div class="ep-label">Dragging</div>
+    <div id="ep-selected">
+      <div id="ep-selected-hint">Drag a marker — its coordinates will appear here.</div>
+      <div id="ep-selected-name"   style="display:none"></div>
+      <div id="ep-selected-coords" style="display:none"></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="ep-label">Click anywhere on map</div>
+    <div id="ep-probe">→ <span id="ep-probe-val">—</span></div>
+  </div>
+
+  <div style="flex:1; display:flex; flex-direction:column; gap:6px;">
+    <div class="ep-label" id="ep-output-label">Updated stops.js</div>
+    <textarea id="ep-output" spellcheck="false" readonly></textarea>
+    <button id="ep-copy-btn" onclick="copyOutput()">Copy to clipboard</button>
+  </div>
+
+  <div class="ep-note">
+    Copy the text above, then paste it into<br>
+    <code>transit-map/data/stops.js</code><br>
+    (or <code>locations.js</code> when in Locations mode).
+  </div>
+</div>
+
+<div id="map-editor"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const LINE_COLORS = { '1': '#009AC7', '2': '#E31837' };
+const CAT_COLORS  = {
+  restaurant: '#c0392b', coffee: '#7d5a3c', park: '#27ae60',
+  theatre: '#8e44ad', bar: '#2471a3', museum: '#e67e22',
+  library: '#1a5276', shop: '#16a085', other: '#515151',
+};
+const CAT_EMOJI = {
+  restaurant: '🍽️', coffee: '☕', park: '🌳', theatre: '🎭',
+  bar: '🍺', museum: '🏛️', library: '📚', shop: '🛍️', other: '📍',
+};
+
+const map = L.map('map-editor', { center: [47.60, -122.28], zoom: 11 });
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>',
+  subdomains: 'abcd', maxZoom: 19,
+}).addTo(map);
+
+// Catmull-Rom spline helper
+function catmullRom(coords, n) {
+  const p = [
+    [2*coords[0][0]-coords[1][0],                   2*coords[0][1]-coords[1][1]],
+    ...coords,
+    [2*coords[coords.length-1][0]-coords[coords.length-2][0],
+     2*coords[coords.length-1][1]-coords[coords.length-2][1]],
+  ];
+  const out = [];
+  for (let i = 1; i < p.length - 2; i++) {
+    for (let j = 0; j < n; j++) {
+      const t = j / n, t2 = t*t, t3 = t2*t;
+      const lng = 0.5*((2*p[i][0]) + (-p[i-1][0]+p[i+1][0])*t + (2*p[i-1][0]-5*p[i][0]+4*p[i+1][0]-p[i+2][0])*t2 + (-p[i-1][0]+3*p[i][0]-3*p[i+1][0]+p[i+2][0])*t3);
+      const lat = 0.5*((2*p[i][1]) + (-p[i-1][1]+p[i+1][1])*t + (2*p[i-1][1]-5*p[i][1]+4*p[i+1][1]-p[i+2][1])*t2 + (-p[i-1][1]+3*p[i][1]-3*p[i+1][1]+p[i+2][1])*t3);
+      out.push([lat, lng]);
+    }
+  }
+  out.push([coords[coords.length-1][1], coords[coords.length-1][0]]);
+  return out;
+}
+
+// Background rail lines (smoothed)
+LINES_DATA.features.forEach(f => {
+  const smoothed = catmullRom(f.geometry.coordinates, 20);
+  L.polyline(smoothed, { color: LINE_COLORS[f.properties.line], weight: 4, opacity: 0.45 }).addTo(map);
+});
+
+// Deep-copy working data
+let stopsData = JSON.parse(JSON.stringify(STOPS_DATA.features));
+let locsData  = JSON.parse(JSON.stringify(LOCATIONS_DATA));
+
+let mode = 'stops';
+let stopMarkers = [], locMarkers = [];
+
+// ---- Stop markers (always draggable) ----
+function buildStopMarkers() {
+  stopsData.forEach((f, idx) => {
+    const [lng, lat] = f.geometry.coordinates;
+    const lines = f.properties.lines;
+    const color = (lines.includes('1') && lines.includes('2')) ? '#7d3c98' : LINE_COLORS[lines[0]];
+
+    const icon = L.divIcon({
+      className: 'leaflet-marker-draggable',
+      html: `<div style="width:14px;height:14px;border-radius:50%;background:${color};border:3px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,0.4);"></div>`,
+      iconSize: [14, 14],
+      iconAnchor: [7, 7],
+    });
+    const mk = L.marker([lat, lng], { icon, draggable: true, title: f.properties.name });
+
+    mk.on('dragstart', () => showSelected(f.properties.name, mk.getLatLng().lat, mk.getLatLng().lng));
+    mk.on('drag', () => {
+      const ll = mk.getLatLng();
+      stopsData[idx].geometry.coordinates = [round6(ll.lng), round6(ll.lat)];
+      updateCoords(ll.lat, ll.lng);
+      refreshOutput();
+    });
+
+    stopMarkers.push(mk);
+  });
+}
+
+// ---- Location markers (always draggable) ----
+function buildLocMarkers() {
+  locsData.forEach((loc, idx) => {
+    const color = CAT_COLORS[loc.category] || '#515151';
+    const emoji = CAT_EMOJI[loc.category] || '📍';
+    const icon = L.divIcon({
+      className: 'leaflet-marker-draggable',
+      html: `<div style="
+        width:28px;height:28px;
+        border-radius:50% 50% 50% 0;
+        transform:rotate(-45deg);
+        background:${color};
+        border:2px solid rgba(255,255,255,0.9);
+        box-shadow:0 1px 6px rgba(0,0,0,0.3);
+        display:flex;align-items:center;justify-content:center;
+      "><span style="transform:rotate(45deg);font-size:12px;line-height:1;pointer-events:none;">${emoji}</span></div>`,
+      iconSize: [28, 28],
+      iconAnchor: [14, 28],
+    });
+    const mk = L.marker([loc.lat, loc.lng], { icon, draggable: true, title: loc.name });
+
+    mk.on('dragstart', () => showSelected(loc.name, mk.getLatLng().lat, mk.getLatLng().lng));
+    mk.on('drag', () => {
+      const ll = mk.getLatLng();
+      locsData[idx].lat = round6(ll.lat);
+      locsData[idx].lng = round6(ll.lng);
+      updateCoords(ll.lat, ll.lng);
+      refreshOutput();
+    });
+
+    locMarkers.push(mk);
+  });
+}
+
+// ---- Helpers ----
+function round6(n) { return parseFloat(n.toFixed(6)); }
+
+function showSelected(name, lat, lng) {
+  document.getElementById('ep-selected-hint').style.display = 'none';
+  document.getElementById('ep-selected-name').style.display = '';
+  document.getElementById('ep-selected-coords').style.display = '';
+  document.getElementById('ep-selected-name').textContent = name;
+  updateCoords(lat, lng);
+}
+
+function updateCoords(lat, lng) {
+  document.getElementById('ep-selected-coords').textContent =
+    `lat: ${lat.toFixed(6)},  lng: ${lng.toFixed(6)}`;
+}
+
+map.on('click', e => {
+  document.getElementById('ep-probe-val').textContent =
+    `${e.latlng.lat.toFixed(6)}, ${e.latlng.lng.toFixed(6)}`;
+});
+
+// ---- Mode switching ----
+function setMode(m) {
+  mode = m;
+  document.getElementById('btn-stops').classList.toggle('active', m === 'stops');
+  document.getElementById('btn-locs').classList.toggle('active', m === 'locations');
+  document.getElementById('ep-output-label').textContent =
+    m === 'stops' ? 'Updated stops.js' : 'Updated locations.js';
+
+  stopMarkers.forEach(mk => m === 'stops' ? mk.addTo(map) : mk.remove());
+  locMarkers.forEach( mk => m === 'locations' ? mk.addTo(map) : mk.remove());
+
+  refreshOutput();
+}
+
+// ---- Output ----
+function refreshOutput() {
+  const ta = document.getElementById('ep-output');
+  if (mode === 'stops') {
+    ta.value = '// Edit coordinates here or drag markers on /transit-map/editor/\nconst STOPS_DATA = ' +
+      JSON.stringify({ type: 'FeatureCollection', features: stopsData }, null, 2) + ';';
+  } else {
+    ta.value = '// Add your locations here.\n// Fields: name, category, lat, lng, notes (optional)\n// Categories: restaurant, coffee, park, theatre, bar, museum, library, shop, other\nconst LOCATIONS_DATA = ' +
+      JSON.stringify(locsData, null, 2) + ';';
+  }
+}
+
+function copyOutput() {
+  const ta = document.getElementById('ep-output');
+  ta.select();
+  navigator.clipboard
+    ? navigator.clipboard.writeText(ta.value)
+    : document.execCommand('copy');
+  const btn = document.getElementById('ep-copy-btn');
+  btn.textContent = '✓ Copied!';
+  btn.classList.add('copied');
+  setTimeout(() => { btn.textContent = 'Copy to clipboard'; btn.classList.remove('copied'); }, 2000);
+}
+
+// ---- Init ----
+buildStopMarkers();
+buildLocMarkers();
+setMode('stops'); // shows stop markers, hides loc markers, renders output
+</script>

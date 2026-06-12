@@ -1,0 +1,372 @@
+---
+layout: page
+title: "Seattle Link Light Rail"
+project: true
+permalink: /transit-map/
+hidden: true
+---
+
+<style>
+  .content { max-width: 58rem; }
+
+  #map-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  #cat-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .cat-btn {
+    padding: 4px 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 999px;
+    background: #f9f9f9;
+    color: #515151;
+    font-size: 12px;
+    font-family: "PT Sans", Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s, border-color 0.12s;
+    white-space: nowrap;
+  }
+
+  #walk-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #515151;
+    margin-left: auto;
+    flex-wrap: wrap;
+  }
+
+  #walk-filter label {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+  }
+
+  #rings-btn {
+    padding: 4px 12px;
+    border: 1px solid #268bd2;
+    border-radius: 2px;
+    background: #fff;
+    color: #268bd2;
+    font-size: 12px;
+    font-family: "PT Sans", Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.12s, color 0.12s;
+  }
+  #rings-btn.active {
+    background: #268bd2;
+    color: #fff;
+  }
+
+  #transit-map {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    margin-bottom: 24px;
+  }
+
+  #loc-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    color: #515151;
+  }
+  #loc-table th {
+    text-align: left;
+    border-bottom: 2px solid #e5e5e5;
+    padding: 6px 8px;
+    font-weight: bold;
+    color: #313131;
+  }
+  #loc-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: top;
+  }
+  #loc-table tr:hover td { background: #f9f9f9; }
+
+  .cat-chip {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 999px;
+    font-size: 11px;
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  #no-results {
+    color: #aaa;
+    font-style: italic;
+    font-size: 13px;
+    padding: 16px 0;
+  }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+
+<div id="map-controls">
+  <div id="cat-chips"></div>
+  <div id="walk-filter">
+    <span style="font-weight:bold; color:#313131;">Walk:</span>
+    <label><input type="radio" name="walk" value="all" checked> All</label>
+    <label><input type="radio" name="walk" value="5"> 5 min</label>
+    <label><input type="radio" name="walk" value="10"> 10 min</label>
+    <button id="rings-btn" onclick="toggleRings()">Walk rings / Show</button>
+  </div>
+</div>
+
+<div id="transit-map"></div>
+
+<p id="no-results" style="display:none">No locations match the current filters.</p>
+<table id="loc-table">
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Category</th>
+      <th>Nearest Station</th>
+      <th>Walk</th>
+    </tr>
+  </thead>
+  <tbody id="loc-tbody"></tbody>
+</table>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Turf.js/6.5.0/turf.min.js"></script>
+<script src="/transit-map/data/stops.js"></script>
+<script src="/transit-map/data/lines.js"></script>
+<script src="/transit-map/data/locations.js"></script>
+<script>
+const CATEGORIES = {
+  restaurant: { emoji: '🍽️', color: '#c0392b', label: 'Restaurants' },
+  coffee:     { emoji: '☕',  color: '#7d5a3c', label: 'Coffee'      },
+  park:       { emoji: '🌳', color: '#27ae60', label: 'Parks'       },
+  theatre:    { emoji: '🎭', color: '#8e44ad', label: 'Theatres'    },
+  bar:        { emoji: '🍺', color: '#2471a3', label: 'Bars'        },
+  museum:     { emoji: '🏛️', color: '#e67e22', label: 'Museums'     },
+  library:    { emoji: '📚', color: '#1a5276', label: 'Libraries'   },
+  shop:       { emoji: '🛍️', color: '#16a085', label: 'Shops'       },
+  other:      { emoji: '📍', color: '#515151', label: 'Other'       },
+};
+
+const LINE_COLORS = { '1': '#009AC7', '2': '#E31837' };
+const WALK_MPS = 83.3; // metres per minute
+
+let stops = [], locationData = [], locationMarkers = [];
+let activeCategories = new Set(Object.keys(CATEGORIES));
+let walkFilter = 'all';
+let wtCache = {};
+let ringsVisible = false;
+let ringLayer = null;
+
+const map = L.map('transit-map', { center: [47.62, -122.27], zoom: 12 });
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>',
+  subdomains: 'abcd', maxZoom: 19,
+}).addTo(map);
+
+// ── Catmull-Rom spline ──────────────────────────────────────────────────────
+function catmullRom(coords, n) {
+  const p = [
+    [2*coords[0][0]-coords[1][0],                   2*coords[0][1]-coords[1][1]],
+    ...coords,
+    [2*coords[coords.length-1][0]-coords[coords.length-2][0],
+     2*coords[coords.length-1][1]-coords[coords.length-2][1]],
+  ];
+  const out = [];
+  for (let i = 1; i < p.length - 2; i++) {
+    for (let j = 0; j < n; j++) {
+      const t = j/n, t2=t*t, t3=t2*t;
+      const lng = 0.5*((2*p[i][0])+(-p[i-1][0]+p[i+1][0])*t+(2*p[i-1][0]-5*p[i][0]+4*p[i+1][0]-p[i+2][0])*t2+(-p[i-1][0]+3*p[i][0]-3*p[i+1][0]+p[i+2][0])*t3);
+      const lat = 0.5*((2*p[i][1])+(-p[i-1][1]+p[i+1][1])*t+(2*p[i-1][1]-5*p[i][1]+4*p[i+1][1]-p[i+2][1])*t2+(-p[i-1][1]+3*p[i][1]-3*p[i+1][1]+p[i+2][1])*t3);
+      out.push([lat, lng]);
+    }
+  }
+  out.push([coords[coords.length-1][1], coords[coords.length-1][0]]);
+  return out;
+}
+
+// ── Rail lines ──────────────────────────────────────────────────────────────
+function renderLines() {
+  LINES_DATA.features.forEach(f => {
+    const color = LINE_COLORS[f.properties.line];
+    const smoothed = catmullRom(f.geometry.coordinates, 20);
+    L.polyline(smoothed, { color, weight: 4, opacity: 0.85 }).addTo(map);
+  });
+}
+
+// ── Stations ────────────────────────────────────────────────────────────────
+function renderStops() {
+  STOPS_DATA.features.forEach(f => {
+    const [lng, lat] = f.geometry.coordinates;
+    const lines = f.properties.lines;
+    const color = (lines.includes('1') && lines.includes('2'))
+      ? '#7d3c98'
+      : LINE_COLORS[lines[0]];
+    L.circleMarker([lat, lng], {
+      radius: 6,
+      fillColor: color,
+      fillOpacity: 1,
+      color: '#fff',
+      weight: 2,
+    }).bindTooltip(f.properties.name, { direction: 'top', offset: [0, -8] }).addTo(map);
+  });
+  stops = STOPS_DATA.features.map(f => ({
+    name: f.properties.name,
+    lat:  f.geometry.coordinates[1],
+    lng:  f.geometry.coordinates[0],
+  }));
+}
+
+// ── Walk time ───────────────────────────────────────────────────────────────
+function walkTime(locLat, locLng) {
+  const key = `${locLat},${locLng}`;
+  if (wtCache[key]) return wtCache[key];
+  let bestDist = Infinity, bestStop = '';
+  const pt = turf.point([locLng, locLat]);
+  stops.forEach(s => {
+    const dist = turf.distance(pt, turf.point([s.lng, s.lat]), { units: 'meters' });
+    if (dist < bestDist) { bestDist = dist; bestStop = s.name; }
+  });
+  wtCache[key] = { mins: bestDist / WALK_MPS, stop: bestStop };
+  return wtCache[key];
+}
+
+// ── Walk rings ──────────────────────────────────────────────────────────────
+function buildRings() {
+  const layers = [];
+  stops.forEach(s => {
+    layers.push(L.circle([s.lat, s.lng], {
+      radius: 416.5, color: '#27ae60', fillColor: '#27ae60',
+      fillOpacity: 0.12, weight: 0,
+    }));
+    layers.push(L.circle([s.lat, s.lng], {
+      radius: 833, color: '#e67e22', fillColor: '#e67e22',
+      fillOpacity: 0.07, weight: 0,
+    }));
+  });
+  ringLayer = L.layerGroup(layers);
+}
+
+function toggleRings() {
+  ringsVisible = !ringsVisible;
+  const btn = document.getElementById('rings-btn');
+  if (ringsVisible) {
+    ringLayer.addTo(map);
+    btn.textContent = 'Walk rings / Hide';
+    btn.classList.add('active');
+  } else {
+    map.removeLayer(ringLayer);
+    btn.textContent = 'Walk rings / Show';
+    btn.classList.remove('active');
+  }
+}
+
+// ── Location markers + table ────────────────────────────────────────────────
+function updateAll() {
+  locationMarkers.forEach(m => map.removeLayer(m));
+  locationMarkers = [];
+
+  const tbody = document.getElementById('loc-tbody');
+  tbody.innerHTML = '';
+  const rows = [];
+
+  locationData.forEach(loc => {
+    if (!activeCategories.has(loc.category)) return;
+    const wt = walkTime(loc.lat, loc.lng);
+    if (walkFilter === '5'  && wt.mins > 5)  return;
+    if (walkFilter === '10' && wt.mins > 10) return;
+
+    const cat = CATEGORIES[loc.category] || CATEGORIES.other;
+
+    const icon = L.divIcon({
+      className: '',
+      html: `<div style="width:26px;height:26px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:${cat.color};border:2px solid rgba(255,255,255,0.85);box-shadow:0 1px 5px rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;"><span style="transform:rotate(45deg);font-size:11px;line-height:1;pointer-events:none;">${cat.emoji}</span></div>`,
+      iconSize: [26, 26],
+      iconAnchor: [13, 26],
+    });
+    const marker = L.marker([loc.lat, loc.lng], { icon })
+      .bindTooltip(
+        `<strong>${loc.name}</strong><br>${wt.mins.toFixed(1)} min walk from ${wt.stop}`,
+        { direction: 'top' }
+      )
+      .addTo(map);
+    locationMarkers.push(marker);
+    rows.push({ loc, wt, cat });
+  });
+
+  rows.sort((a, b) => a.wt.mins - b.wt.mins);
+
+  rows.forEach(({ loc, wt, cat }) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${loc.name}${loc.notes ? `<br><small style="color:#aaa">${loc.notes}</small>` : ''}</td>
+      <td><span class="cat-chip" style="background:${cat.color}">${cat.emoji} ${cat.label.replace(/s$/, '')}</span></td>
+      <td>${wt.stop}</td>
+      <td>${wt.mins.toFixed(1)} min</td>`;
+    tbody.appendChild(tr);
+  });
+
+  const noResults = document.getElementById('no-results');
+  const table     = document.getElementById('loc-table');
+  noResults.style.display = rows.length === 0 ? '' : 'none';
+  table.style.display     = rows.length === 0 ? 'none' : '';
+}
+
+// ── Category chip UI ────────────────────────────────────────────────────────
+function buildCategoryUI() {
+  const container = document.getElementById('cat-chips');
+  const usedCats  = new Set(locationData.map(l => l.category));
+  const keys = [
+    ...Object.keys(CATEGORIES).filter(k => usedCats.has(k)),
+    ...[...usedCats].filter(k => !CATEGORIES[k]),
+  ];
+
+  keys.forEach(key => {
+    const cat = CATEGORIES[key] || { emoji: '📍', color: '#515151', label: key };
+    const btn = document.createElement('button');
+    btn.className = 'cat-btn active';
+    btn.style.cssText = `background:${cat.color};border-color:${cat.color};color:#fff`;
+    btn.textContent = `${cat.emoji} ${cat.label}`;
+    btn.dataset.cat = key;
+    btn.addEventListener('click', () => {
+      if (activeCategories.has(key)) {
+        activeCategories.delete(key);
+        btn.style.cssText = 'background:#f9f9f9;border-color:#e5e5e5;color:#515151';
+      } else {
+        activeCategories.add(key);
+        btn.style.cssText = `background:${cat.color};border-color:${cat.color};color:#fff`;
+      }
+      updateAll();
+    });
+    container.appendChild(btn);
+  });
+}
+
+// Walk filter
+document.querySelectorAll('input[name="walk"]').forEach(r => {
+  r.addEventListener('change', e => { walkFilter = e.target.value; updateAll(); });
+});
+
+// Init
+locationData = LOCATIONS_DATA;
+renderLines();
+renderStops();
+buildRings();
+buildCategoryUI();
+updateAll();
+</script>
