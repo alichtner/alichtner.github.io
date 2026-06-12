@@ -1,0 +1,25 @@
+---
+---
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  {% include head.html %}
+  <style>
+    html, body { height: 100%; overflow: hidden; margin: 0; }
+    .content.container {
+      position: fixed;
+      top: 0; right: 0; bottom: 0;
+      left: 18rem;
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+      max-width: none;
+      overflow: hidden;
+    }
+  </style>
+  <body>
+    {% include sidebar.html %}
+    <div class="content container">
+      {{ content }}
+    </div>
+  </body>
+</html>
