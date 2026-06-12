@@ -1,0 +1,482 @@
+---
+layout: page
+title: Seattle Link Light Rail Map
+date: 2026-06-06
+project: true
+permalink: /transit-map/
+slug: transit-map
+hidden: true
+---
+
+<p>An interactive map of Seattle's Link Light Rail network. Filter by category and walk time to see what's within reach of each station.</p>
+
+<script src="/transit-map/data/stops.js"></script>
+<script src="/transit-map/data/lines.js"></script>
+<script src="/transit-map/data/locations.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+
+<style>
+  /* Widen just this page — a bit beyond normal 45rem, but not full-width */
+  .content.container {
+    max-width: 58rem !important;
+    max-height: 120rem;
+  }
+
+  /* ---- Controls bar ---- */
+  #map-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 20px;
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+  }
+
+  .ctrl-group {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap;
+  }
+
+  .ctrl-label {
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #9a9a9a;
+    white-space: nowrap;
+  }
+
+  .ctrl-divider {
+    width: 1px;
+    height: 22px;
+    background: #e5e5e5;
+    flex-shrink: 0;
+  }
+
+  /* Category chips — hidden checkbox, styled label */
+  .cat-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    font-size: 0.78rem;
+    cursor: pointer;
+    user-select: none;
+    line-height: 1.6;
+    transition: opacity 0.12s;
+  }
+  .cat-chip input[type="checkbox"] { display: none; }
+  .cat-chip.active  { background: #f9f9f9; border-color: currentColor; }
+  .cat-chip.inactive { opacity: 0.35; border-color: #e5e5e5; color: #aaa !important; background: #f9f9f9; }
+
+  /* Walk time buttons */
+  .walk-group { display: flex; gap: 3px; }
+  .walk-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 9px;
+    border-radius: 2px;
+    border: 1px solid #e5e5e5;
+    font-size: 0.78rem;
+    cursor: pointer;
+    user-select: none;
+    background: #fff;
+    color: #515151;
+    line-height: 1.6;
+    transition: background 0.12s, border-color 0.12s, color 0.12s;
+  }
+  .walk-btn input[type="radio"] { display: none; }
+  .walk-btn.selected { background: #268bd2; border-color: #268bd2; color: #fff; }
+
+  /* ---- Map ---- */
+  #transit-map {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ---- Location table header ---- */
+  #loc-table-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-bottom: 0.4rem;
+  }
+  #loc-table-header h4 {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #9a9a9a;
+  }
+  #table-count {
+    font-size: 0.78rem;
+    color: #aaa;
+  }
+
+  /* Table — poole.css already provides borders/stripes; we just tune typography */
+  #loc-table { font-size: 0.82rem; }
+  #loc-table th {
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #9a9a9a;
+    background: #f9f9f9;
+  }
+  #loc-table td { color: #515151; vertical-align: top; }
+  #loc-table .td-name  { font-weight: bold; color: #313131; }
+  #loc-table .td-cat   { color: #9a9a9a; }
+  #loc-table .td-walk  { white-space: nowrap; font-weight: bold; }
+  #loc-table .walk-5   { color: #2a9d5c; }
+  #loc-table .walk-10  { color: #b07d0a; }
+  #loc-table .walk-far { color: #aaa; }
+  #loc-table .td-stop  { color: #9a9a9a; font-size: 0.78rem; }
+  #loc-table .td-notes { color: #9a9a9a; font-style: italic; }
+
+  #loc-table-empty {
+    padding: 1.5rem 0;
+    text-align: center;
+    color: #bbb;
+    font-size: 0.85rem;
+  }
+
+  /* ---- Leaflet popup styles ---- */
+  .leaflet-popup-content-wrapper { border-radius: 4px; }
+  .leaflet-popup-content { margin: 10px 12px; min-width: 140px; font-family: "PT Sans", Helvetica, Arial, sans-serif; }
+  .popup-name  { font-weight: bold; font-size: 0.85rem; color: #313131; margin-bottom: 2px; }
+  .popup-cat   { font-size: 0.75rem; color: #9a9a9a; text-transform: capitalize; margin-bottom: 6px; }
+  .popup-walk-pill {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 0.75rem; font-weight: bold; padding: 2px 7px; border-radius: 2px;
+  }
+  .pill-5   { background: #d5f5e3; color: #1a7a43; }
+  .pill-10  { background: #fef3cd; color: #856404; }
+  .pill-far { background: #f9f9f9; color: #9a9a9a; }
+  .popup-stop-name { font-size: 0.7rem; color: #bbb; margin-top: 4px; }
+  .popup-notes     { font-size: 0.75rem; color: #777; margin-top: 5px; font-style: italic; line-height: 1.4; }
+  .stop-popup-name { font-weight: bold; font-size: 0.85rem; color: #313131; margin-bottom: 5px; }
+  .stop-line-chip  { display: inline-block; font-size: 0.7rem; font-weight: bold; padding: 1px 6px; border-radius: 2px; margin-right: 3px; }
+
+  /* ---- Marker pins ---- */
+  .loc-pin {
+    position: relative; width: 28px; height: 28px;
+    border-radius: 50% 50% 50% 0; transform: rotate(-45deg);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.22);
+    border: 2px solid rgba(255,255,255,0.9);
+    cursor: pointer;
+  }
+  .loc-pin-emoji { transform: rotate(45deg); font-size: 12px; line-height: 1; user-select: none; }
+  .walk-dot {
+    position: absolute; bottom: -3px; right: -3px;
+    width: 8px; height: 8px;
+    border-radius: 50%; border: 2px solid #fff;
+    transform: rotate(45deg);
+  }
+  .walk-dot-5   { background: #2ecc71; }
+  .walk-dot-10  { background: #e6ac00; }
+  .walk-dot-far { background: #ccc; }
+</style>
+
+<!-- Controls -->
+<div id="map-controls">
+  <div class="ctrl-group">
+    <span class="ctrl-label">Show</span>
+    <div id="cat-filters" style="display:flex;flex-wrap:wrap;gap:4px;"></div>
+  </div>
+  <div class="ctrl-divider"></div>
+  <div class="ctrl-group">
+    <span class="ctrl-label">Walk time</span>
+    <div class="walk-group">
+      <label class="walk-btn selected"><input type="radio" name="walk" value="all" checked> All</label>
+      <label class="walk-btn"><input type="radio" name="walk" value="10"> &lt; 10 min</label>
+      <label class="walk-btn"><input type="radio" name="walk" value="5"> &lt; 5 min</label>
+    </div>
+  </div>
+  <div class="ctrl-divider"></div>
+  <div class="ctrl-group">
+    <span class="ctrl-label">Walk rings</span>
+    <button id="rings-toggle" class="walk-btn" onclick="toggleRings()">Show</button>
+  </div>
+</div>
+
+<!-- Map -->
+<div id="transit-map"></div>
+
+<!-- Location table -->
+<div id="loc-table-header">
+  <h4>Locations</h4>
+  <span id="table-count"></span>
+</div>
+<table id="loc-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Walk time</th>
+      <th>Nearest stop</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody id="loc-tbody"></tbody>
+</table>
+<div id="loc-table-empty" style="display:none;">No locations match the current filters.</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Turf.js/6.5.0/turf.min.js"></script>
+<script>
+const CATEGORIES = {
+  restaurant: { emoji: '🍽️', color: '#c0392b', label: 'Restaurants' },
+  coffee:     { emoji: '☕', color: '#7d5a3c', label: 'Coffee' },
+  park:       { emoji: '🌳', color: '#27ae60', label: 'Parks' },
+  theatre:    { emoji: '🎭', color: '#8e44ad', label: 'Theatres' },
+  bar:        { emoji: '🍺', color: '#2471a3', label: 'Bars' },
+  museum:     { emoji: '🏛️', color: '#e67e22', label: 'Museums' },
+  library:    { emoji: '📚', color: '#1a5276', label: 'Libraries' },
+  shop:       { emoji: '🛍️', color: '#16a085', label: 'Shops' },
+  other:      { emoji: '📍', color: '#515151', label: 'Other' },
+};
+
+const LINE_COLORS = { '1': '#009AC7', '2': '#E31837' };
+const WALK_MPS = 83.3;
+
+let stops = [], locationData = [], locationMarkers = [];
+let activeCategories = new Set(Object.keys(CATEGORIES));
+let walkFilter = 'all';
+let wtCache = {};
+let ringsVisible = false;
+let ringLayer = null;
+
+const map = L.map('transit-map', { center: [47.62, -122.27], zoom: 12 });
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>',
+  subdomains: 'abcd', maxZoom: 19,
+}).addTo(map);
+
+function buildRings() {
+  if (ringLayer) ringLayer.remove();
+  ringLayer = L.layerGroup();
+  const WALK_5  = 83.3 * 5;   // 416.5m
+  const WALK_10 = 83.3 * 10;  // 833m
+  stops.forEach(f => {
+    const [lng, lat] = f.geometry.coordinates;
+    // 10-min ring drawn first (behind)
+    L.circle([lat, lng], {
+      radius: WALK_10, stroke: false,
+      fillColor: '#e6ac00', fillOpacity: 0.07,
+    }).addTo(ringLayer);
+    // 5-min ring on top
+    L.circle([lat, lng], {
+      radius: WALK_5, stroke: false,
+      fillColor: '#2ecc71', fillOpacity: 0.12,
+    }).addTo(ringLayer);
+  });
+}
+
+function toggleRings() {
+  ringsVisible = !ringsVisible;
+  const btn = document.getElementById('rings-toggle');
+  btn.classList.toggle('selected', ringsVisible);
+  btn.textContent = ringsVisible ? 'Hide' : 'Show';
+  if (ringsVisible) {
+    buildRings();
+    ringLayer.addTo(map);
+  } else {
+    ringLayer && ringLayer.remove();
+  }
+}
+
+function loadData() {
+  stops = STOPS_DATA.features;
+  locationData = LOCATIONS_DATA;
+  renderLines(LINES_DATA);
+  renderStops(STOPS_DATA);
+  buildCategoryUI();
+  updateAll();
+}
+
+// Catmull-Rom spline: smooths a polyline through its control points.
+// coords = [[lng,lat],...] (GeoJSON order); returns [[lat,lng],...] (Leaflet order).
+function catmullRom(coords, n) {
+  const p = [
+    [2*coords[0][0]-coords[1][0],                   2*coords[0][1]-coords[1][1]],
+    ...coords,
+    [2*coords[coords.length-1][0]-coords[coords.length-2][0],
+     2*coords[coords.length-1][1]-coords[coords.length-2][1]],
+  ];
+  const out = [];
+  for (let i = 1; i < p.length - 2; i++) {
+    for (let j = 0; j < n; j++) {
+      const t = j / n, t2 = t*t, t3 = t2*t;
+      const lng = 0.5*((2*p[i][0]) + (-p[i-1][0]+p[i+1][0])*t + (2*p[i-1][0]-5*p[i][0]+4*p[i+1][0]-p[i+2][0])*t2 + (-p[i-1][0]+3*p[i][0]-3*p[i+1][0]+p[i+2][0])*t3);
+      const lat = 0.5*((2*p[i][1]) + (-p[i-1][1]+p[i+1][1])*t + (2*p[i-1][1]-5*p[i][1]+4*p[i+1][1]-p[i+2][1])*t2 + (-p[i-1][1]+3*p[i][1]-3*p[i+1][1]+p[i+2][1])*t3);
+      out.push([lat, lng]);
+    }
+  }
+  out.push([coords[coords.length-1][1], coords[coords.length-1][0]]);
+  return out;
+}
+
+function renderLines(geo) {
+  geo.features.forEach(f => {
+    const smoothed = catmullRom(f.geometry.coordinates, 20);
+    L.polyline(smoothed, { color: LINE_COLORS[f.properties.line], weight: 5, opacity: 0.8 }).addTo(map);
+  });
+}
+
+function renderStops(geo) {
+  geo.features.forEach(f => {
+    const { name, lines } = f.properties;
+    const [lng, lat] = f.geometry.coordinates;
+    const color = (lines.includes('1') && lines.includes('2')) ? '#7d3c98' : LINE_COLORS[lines[0]];
+    const chips = lines.map(l =>
+      `<span class="stop-line-chip" style="background:${LINE_COLORS[l]}22;color:${LINE_COLORS[l]}">${l} Line</span>`
+    ).join('');
+    L.circleMarker([lat, lng], { radius: 5, fillColor: color, fillOpacity: 1, color: '#fff', weight: 2 })
+     .bindPopup(`<div class="stop-popup-name">🚈 ${name}</div><div>${chips}</div>`)
+     .addTo(map);
+  });
+}
+
+function walkTime(lat, lng) {
+  const pt = turf.point([lng, lat]);
+  let minM = Infinity, nearest = '';
+  stops.forEach(s => {
+    const d = turf.distance(pt, turf.point(s.geometry.coordinates), { units: 'meters' });
+    if (d < minM) { minM = d; nearest = s.properties.name; }
+  });
+  return { minutes: minM / WALK_MPS, meters: minM, stop: nearest };
+}
+
+function makeIcon(cat, mins) {
+  const c = CATEGORIES[cat] || CATEGORIES.other;
+  const dotCls = mins < 5 ? 'walk-dot walk-dot-5' : mins < 10 ? 'walk-dot walk-dot-10' : 'walk-dot walk-dot-far';
+  return L.divIcon({
+    className: '',
+    html: `<div class="loc-pin" style="background:${c.color}"><div class="loc-pin-emoji">${c.emoji}</div><div class="${dotCls}"></div></div>`,
+    iconSize: [28, 28], iconAnchor: [14, 28], popupAnchor: [0, -30],
+  });
+}
+
+function makePopup(loc, wt) {
+  const c = CATEGORIES[loc.category] || CATEGORIES.other;
+  const mins = wt.minutes;
+  const pillCls = mins < 5 ? 'pill-5' : mins < 10 ? 'pill-10' : 'pill-far';
+  const dot = mins < 5 ? '🟢' : mins < 10 ? '🟡' : '⚪';
+  const notes = loc.notes ? `<div class="popup-notes">${loc.notes}</div>` : '';
+  return `<div class="popup-name">${c.emoji} ${loc.name}</div>
+    <div class="popup-cat">${c.label}</div>
+    <span class="popup-walk-pill ${pillCls}">${dot} ${Math.round(mins)} min walk</span>
+    <div class="popup-stop-name">Nearest: ${wt.stop}</div>${notes}`;
+}
+
+function updateAll() {
+  const filtered = [];
+  locationData.forEach(loc => {
+    if (!activeCategories.has(loc.category)) return;
+    if (!wtCache[loc.name]) wtCache[loc.name] = walkTime(loc.lat, loc.lng);
+    const wt = wtCache[loc.name];
+    if (walkFilter === '5'  && wt.minutes >= 5)  return;
+    if (walkFilter === '10' && wt.minutes >= 10) return;
+    filtered.push({ loc, wt });
+  });
+
+  // Map markers
+  locationMarkers.forEach(m => m.remove());
+  locationMarkers = [];
+  filtered.forEach(({ loc, wt }) => {
+    const marker = L.marker([loc.lat, loc.lng], { icon: makeIcon(loc.category, wt.minutes) });
+    marker.bindPopup(makePopup(loc, wt));
+    marker.addTo(map);
+    locationMarkers.push(marker);
+  });
+
+  // Table
+  document.getElementById('table-count').textContent =
+    `${filtered.length} location${filtered.length !== 1 ? 's' : ''}`;
+
+  const tbody  = document.getElementById('loc-tbody');
+  const empty  = document.getElementById('loc-table-empty');
+  const tbl    = document.getElementById('loc-table');
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = '';
+    tbl.style.display = 'none';
+    empty.style.display = 'block';
+    return;
+  }
+  tbl.style.display = '';
+  empty.style.display = 'none';
+
+  filtered.sort((a, b) => a.wt.minutes - b.wt.minutes);
+
+  tbody.innerHTML = filtered.map(({ loc, wt }) => {
+    const c = CATEGORIES[loc.category] || CATEGORIES.other;
+    const mins = Math.round(wt.minutes);
+    const walkCls = wt.minutes < 5 ? 'walk-5' : wt.minutes < 10 ? 'walk-10' : 'walk-far';
+    const dot = wt.minutes < 5 ? '🟢' : wt.minutes < 10 ? '🟡' : '⚪';
+    return `<tr>
+      <td class="td-name">${c.emoji} ${loc.name}</td>
+      <td class="td-cat">${c.label}</td>
+      <td class="td-walk ${walkCls}">${dot} ${mins} min</td>
+      <td class="td-stop">${wt.stop}</td>
+      <td class="td-notes">${loc.notes || '—'}</td>
+    </tr>`;
+  }).join('');
+}
+
+function buildCategoryUI() {
+  const counts = {};
+  const usedCats = new Set();
+  locationData.forEach(l => { usedCats.add(l.category); counts[l.category] = (counts[l.category] || 0) + 1; });
+  const ordered = [
+    ...Object.keys(CATEGORIES).filter(k => usedCats.has(k)),
+    ...[...usedCats].filter(k => !CATEGORIES[k]),
+  ];
+  const container = document.getElementById('cat-filters');
+  ordered.forEach(key => {
+    const c = CATEGORIES[key] || { emoji: '📍', color: '#515151', label: key };
+    const chip = document.createElement('label');
+    chip.className = 'cat-chip active';
+    chip.style.color = c.color;
+    chip.innerHTML = `<input type="checkbox" checked data-cat="${key}">${c.emoji} ${c.label} <span style="opacity:0.55">${counts[key] || 0}</span>`;
+    chip.querySelector('input').addEventListener('change', e => {
+      if (e.target.checked) {
+        activeCategories.add(key);
+        chip.classList.replace('inactive', 'active');
+        chip.style.color = c.color;
+      } else {
+        activeCategories.delete(key);
+        chip.classList.replace('active', 'inactive');
+      }
+      updateAll();
+    });
+    container.appendChild(chip);
+  });
+}
+
+document.querySelectorAll('input[name="walk"]').forEach(r => {
+  r.addEventListener('change', e => {
+    walkFilter = e.target.value;
+    document.querySelectorAll('.walk-btn').forEach(btn => {
+      btn.classList.toggle('selected', btn.querySelector('input').value === walkFilter);
+    });
+    updateAll();
+  });
+});
+
+loadData();
+</script>

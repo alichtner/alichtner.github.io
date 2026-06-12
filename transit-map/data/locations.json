@@ -1,0 +1,100 @@
+[
+  {
+    "name": "Victrola Coffee Roasters",
+    "category": "coffee",
+    "lat": 47.6186,
+    "lng": -122.3204,
+    "notes": "Classic Capitol Hill roaster on Pine St"
+  },
+  {
+    "name": "Lighthouse Coffee Roasters",
+    "category": "coffee",
+    "lat": 47.6194,
+    "lng": -122.3209,
+    "notes": "Light roasts, good pour-overs"
+  },
+  {
+    "name": "Anchorhead Coffee",
+    "category": "coffee",
+    "lat": 47.6071,
+    "lng": -122.3362,
+    "notes": "Downtown espresso bar on 2nd Ave"
+  },
+  {
+    "name": "Pho Bac Súp Shop",
+    "category": "restaurant",
+    "lat": 47.5987,
+    "lng": -122.3240,
+    "notes": "ID pho institution"
+  },
+  {
+    "name": "Din Tai Fung",
+    "category": "restaurant",
+    "lat": 47.6524,
+    "lng": -122.3041,
+    "notes": "Soup dumplings near UW campus"
+  },
+  {
+    "name": "Matt's in the Market",
+    "category": "restaurant",
+    "lat": 47.6082,
+    "lng": -122.3410,
+    "notes": "Pike Place lunch spot with great views"
+  },
+  {
+    "name": "Tamarind Tree",
+    "category": "restaurant",
+    "lat": 47.5984,
+    "lng": -122.3253,
+    "notes": "Vietnamese, International District"
+  },
+  {
+    "name": "Musashi's",
+    "category": "restaurant",
+    "lat": 47.6614,
+    "lng": -122.3197,
+    "notes": "No-frills sushi in the U District"
+  },
+  {
+    "name": "Cal Anderson Park",
+    "category": "park",
+    "lat": 47.6173,
+    "lng": -122.3196,
+    "notes": "Neighborhood park with reservoir and lawn"
+  },
+  {
+    "name": "Occidental Square",
+    "category": "park",
+    "lat": 47.5997,
+    "lng": -122.3322,
+    "notes": "Cobblestone plaza in Pioneer Square"
+  },
+  {
+    "name": "Volunteer Park",
+    "category": "park",
+    "lat": 47.6306,
+    "lng": -122.3141,
+    "notes": "Water tower views and the Asian Art Museum"
+  },
+  {
+    "name": "SIFF Cinema Egyptian",
+    "category": "theatre",
+    "lat": 47.6181,
+    "lng": -122.3213,
+    "notes": "Historic Capitol Hill cinema, host of SIFF"
+  },
+  {
+    "name": "Grand Illusion Cinema",
+    "category": "theatre",
+    "lat": 47.6614,
+    "lng": -122.3138,
+    "notes": "Tiny indie theater near U District"
+  },
+  {
+    "name": "Paramount Theatre",
+    "category": "theatre",
+    "lat": 47.6109,
+    "lng": -122.3338,
+    "notes": "Historic 1928 venue on Pine St"
+  }
+]
