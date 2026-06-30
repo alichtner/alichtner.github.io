@@ -1,0 +1,14 @@
+{% comment %}
+  Renders a single tag as a linked badge.
+  If the tag has an entry in _data/project_tags.yml, links to the project page.
+  Otherwise links to /tag/tagname.
+
+  Usage:
+    {% include tag_link.html tag=tag_name %}
+{% endcomment %}
+{% assign project_url = site.data.project_tags[include.tag] %}
+{% if project_url %}
+  <a class="no-underline" href="{{ project_url }}"><code class="highligher-rouge"><nobr>{{ include.tag }}</nobr></code>&nbsp;</a>
+{% else %}
+  <a class="no-underline" href="/tag/{{ include.tag }}"><code class="highligher-rouge"><nobr>{{ include.tag }}</nobr></code>&nbsp;</a>
+{% endif %}
