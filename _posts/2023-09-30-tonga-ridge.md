@@ -5,6 +5,13 @@ date: 2023-09-30
 layout: post
 title: "Tonga Ridge / Mount Sawyer"
 tags: hiking
+<<<<<<< add-transit-map
+region: "Hwy 2 / Central Cascades"
+distance: "6.5"
+gain: "1,200"
+drive: "2.0"
+=======
+>>>>>>> master
 image: /public/img/2023/9/hiking-tonga-ridge/IMG20230930134835.jpg
 description: "A ridgeline hike above the Skykomish valley with sweeping Cascade views, peak fall color, and an unexpected proposal at the summit."
 ---
