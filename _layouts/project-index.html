@@ -14,6 +14,7 @@ layout: default
   <table>
     <thead>
       <tr>
+<<<<<<< add-transit-map
         {% if page.table_type == "hiking" %}
         <th>Date</th>
         <th>Hike</th>
@@ -22,6 +23,8 @@ layout: default
         <th style="text-align:right">Gain (ft)</th>
         <th style="text-align:right">Drive (hr)</th>
         {% else %}
+=======
+>>>>>>> master
         <th>Date</th>
         <th>Recipe</th>
         <th>Category</th>
@@ -29,13 +32,17 @@ layout: default
         <th>Source</th>
         <th style="text-align:center">Rating</th>
         <th style="text-align:center">Make Again?</th>
+<<<<<<< add-transit-map
         {% endif %}
+=======
+>>>>>>> master
       </tr>
     </thead>
     <tbody>
       {% for post in tag_posts %}
       {% unless post.project %}
       <tr>
+<<<<<<< add-transit-map
         {% if page.table_type == "hiking" %}
         <td>{{ post.date | date: "%Y-%m-%d" }}</td>
         <td><a href="{{ post.url }}">{{ post.title }}</a></td>
@@ -44,6 +51,8 @@ layout: default
         <td style="text-align:right">{{ post.gain }}</td>
         <td style="text-align:right">{{ post.drive }}</td>
         {% else %}
+=======
+>>>>>>> master
         <td>{{ post.date | date: "%Y-%m-%d" }}</td>
         <td><a href="{{ post.url }}">{{ post.title }}</a></td>
         <td>{{ post.category }}</td>
@@ -51,7 +60,10 @@ layout: default
         <td>{% if post.source_url %}<a href="{{ post.source_url }}">{{ post.source_name }}</a>{% else %}{{ post.source_name }}{% endif %}</td>
         <td style="text-align:center">{{ post.rating }}</td>
         <td style="text-align:center">{{ post.make_again }}</td>
+<<<<<<< add-transit-map
         {% endif %}
+=======
+>>>>>>> master
       </tr>
       {% endunless %}
       {% endfor %}
