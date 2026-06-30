@@ -1,6 +1,6 @@
 // Add your locations here.
 // Fields: name (string), category (string), lat (number), lng (number), notes (optional string)
-// Categories: restaurant, coffee, park, theatre, bar, museum, shop, other
+// Categories: restaurant, coffee, park, theatre, bar, museum, library, shop, other
 const LOCATIONS_DATA = [
 
   // ── CAPITOL HILL (Capitol Hill Station) ─────────────────────────────────
@@ -67,6 +67,27 @@ const LOCATIONS_DATA = [
     "lng": -122.3141,
     "notes": "Water tower views and the Asian Art Museum"
   },
+  {
+    "name": "Capitol Hill Branch Library",
+    "category": "library",
+    "lat": 47.6213,
+    "lng": -122.3133,
+    "notes": "Neighborhood branch on Harvard Ave E"
+  },
+  {
+    "name": "Elliott Bay Book Company",
+    "category": "shop",
+    "lat": 47.6162,
+    "lng": -122.3183,
+    "notes": "Seattle's beloved independent bookstore"
+  },
+  {
+    "name": "Ada's Technical Books",
+    "category": "shop",
+    "lat": 47.6208,
+    "lng": -122.3149,
+    "notes": "Tech and science books plus a cafe on 15th Ave E"
+  },
 
   // ── U DISTRICT (U District & University of Washington Stations) ──────────
   {
@@ -131,6 +152,34 @@ const LOCATIONS_DATA = [
     "lat": 47.6779,
     "lng": -122.3006,
     "notes": "Wooded ravine park north of the U District"
+  },
+  {
+    "name": "Burke Museum",
+    "category": "museum",
+    "lat": 47.6601,
+    "lng": -122.3130,
+    "notes": "Washington's state natural history and culture museum, on UW campus"
+  },
+  {
+    "name": "Henry Art Gallery",
+    "category": "museum",
+    "lat": 47.6558,
+    "lng": -122.3101,
+    "notes": "Contemporary art museum on the west edge of UW campus"
+  },
+  {
+    "name": "UW Suzzallo Library",
+    "category": "library",
+    "lat": 47.6558,
+    "lng": -122.3086,
+    "notes": "Gothic cathedral-style research library at the heart of UW campus"
+  },
+  {
+    "name": "University Book Store",
+    "category": "shop",
+    "lat": 47.6585,
+    "lng": -122.3131,
+    "notes": "The Ave's full-service academic bookstore"
   },
 
   // ── DOWNTOWN (Westlake, University Street, Pioneer Square) ───────────────
@@ -239,6 +288,34 @@ const LOCATIONS_DATA = [
     "lng": -122.3322,
     "notes": "Cobblestone plaza in Pioneer Square"
   },
+  {
+    "name": "Seattle Art Museum",
+    "category": "museum",
+    "lat": 47.6072,
+    "lng": -122.3387,
+    "notes": "SAM's main downtown location at 1st Ave and University St"
+  },
+  {
+    "name": "Klondike Gold Rush National Historical Park",
+    "category": "museum",
+    "lat": 47.6013,
+    "lng": -122.3342,
+    "notes": "Free NPS museum in Pioneer Square covering the 1897 Gold Rush"
+  },
+  {
+    "name": "Seattle Central Library",
+    "category": "library",
+    "lat": 47.6065,
+    "lng": -122.3325,
+    "notes": "Rem Koolhaas-designed central branch, 10 stories of glass and steel"
+  },
+  {
+    "name": "Left Bank Books",
+    "category": "shop",
+    "lat": 47.6090,
+    "lng": -122.3406,
+    "notes": "Radical and independent titles inside Pike Place Market"
+  },
 
   // ── INTERNATIONAL DISTRICT / CHINATOWN ──────────────────────────────────
   {
@@ -269,6 +346,20 @@ const LOCATIONS_DATA = [
     "lng": -122.3253,
     "notes": "Community gathering space in the heart of the ID"
   },
+  {
+    "name": "Wing Luke Museum",
+    "category": "museum",
+    "lat": 47.5975,
+    "lng": -122.3237,
+    "notes": "Smithsonian-affiliated museum of Asian Pacific American experience"
+  },
+  {
+    "name": "International District Branch Library",
+    "category": "library",
+    "lat": 47.5982,
+    "lng": -122.3215,
+    "notes": "Branch library at 8th Ave S in the ID"
+  },
 
   // ── JUDKINS PARK (Line 2) ────────────────────────────────────────────────
   {
@@ -282,57 +373,49 @@ const LOCATIONS_DATA = [
     "name": "Cafe Weekend",
     "category": "coffee",
     "lat": 47.594653,
-    "lng": -122.309396,
-    "notes": ""
+    "lng": -122.309396
   },
   {
     "name": "Anna's Cafe",
     "category": "coffee",
     "lat": 47.586325,
-    "lng": -122.295009,
-    "notes": ""
+    "lng": -122.295009
   },
   {
     "name": "QED Espresso",
     "category": "coffee",
     "lat": 47.590163,
-    "lng": -122.292321,
-    "notes": ""
+    "lng": -122.292321
   },
   {
     "name": "Temple Pastries",
     "category": "coffee",
     "lat": 47.599421,
-    "lng": -122.298689,
-    "notes": ""
+    "lng": -122.298689
   },
   {
     "name": "The Dream Cafe",
     "category": "coffee",
     "lat": 47.589646,
-    "lng": -122.2923,
-    "notes": ""
+    "lng": -122.2923
   },
   {
     "name": "Cheeky Cafe",
     "category": "coffee",
     "lat": 47.59932,
-    "lng": -122.310179,
-    "notes": ""
+    "lng": -122.310179
   },
   {
     "name": "Broadcast Coffee",
     "category": "coffee",
     "lat": 47.601801,
-    "lng": -122.306585,
-    "notes": ""
+    "lng": -122.306585
   },
   {
     "name": "Hello Em Viet Coffee & Roastery",
     "category": "coffee",
     "lat": 47.597504,
-    "lng": -122.315608,
-    "notes": ""
+    "lng": -122.315608
   },
 
   // ── BEACON HILL ──────────────────────────────────────────────────────────
@@ -343,8 +426,15 @@ const LOCATIONS_DATA = [
     "lng": -122.3099,
     "notes": "Large Beacon Hill park with reservoir, golf, and city views"
   },
+  {
+    "name": "Beacon Hill Branch Library",
+    "category": "library",
+    "lat": 47.5681,
+    "lng": -122.3118,
+    "notes": "Beacon Ave S branch"
+  },
 
-  // ── MOUNT BAKER / COLUMBIA CITY / OTHELLO / RAINIER BEACH ───────────────
+  // ── COLUMBIA CITY / RAINIER BEACH ────────────────────────────────────────
   {
     "name": "Genesee Park",
     "category": "park",
@@ -373,6 +463,13 @@ const LOCATIONS_DATA = [
     "lng": -122.2643,
     "notes": "Old-growth forest peninsula on Lake Washington"
   },
+  {
+    "name": "Columbia City Branch Library",
+    "category": "library",
+    "lat": 47.5601,
+    "lng": -122.2891,
+    "notes": "Rainier Ave S branch in Columbia City"
+  },
 
   // ── NORTHGATE ────────────────────────────────────────────────────────────
   {
@@ -388,6 +485,20 @@ const LOCATIONS_DATA = [
     "lat": 47.7047,
     "lng": -122.3218,
     "notes": "Multiplex cinema at Northgate"
+  },
+  {
+    "name": "Northgate Branch Library",
+    "category": "library",
+    "lat": 47.7062,
+    "lng": -122.3208,
+    "notes": "5th Ave NE branch near Northgate Station"
+  },
+  {
+    "name": "Third Place Books Ravenna",
+    "category": "shop",
+    "lat": 47.6771,
+    "lng": -122.3017,
+    "notes": "Community bookstore with events, near Roosevelt station"
   },
 
   // ── BELLEVUE DOWNTOWN (Line 2) ───────────────────────────────────────────
@@ -419,101 +530,6 @@ const LOCATIONS_DATA = [
     "lng": -122.2003,
     "notes": "Large Bellevue multiplex in Lincoln Square"
   },
-
-  // ── LIBRARIES ─────────────────────────────────────────────────────────────
-  {
-    "name": "Seattle Central Library",
-    "category": "library",
-    "lat": 47.6065,
-    "lng": -122.3325,
-    "notes": "Rem Koolhaas-designed central branch, 10 stories of glass and steel"
-  },
-  {
-    "name": "Capitol Hill Branch Library",
-    "category": "library",
-    "lat": 47.6213,
-    "lng": -122.3133,
-    "notes": "Neighborhood branch on Harvard Ave E"
-  },
-  {
-    "name": "International District Branch Library",
-    "category": "library",
-    "lat": 47.5982,
-    "lng": -122.3215,
-    "notes": "Branch library at 8th Ave S in the ID"
-  },
-  {
-    "name": "Beacon Hill Branch Library",
-    "category": "library",
-    "lat": 47.5681,
-    "lng": -122.3118,
-    "notes": "Beacon Ave S branch"
-  },
-  {
-    "name": "Columbia City Branch Library",
-    "category": "library",
-    "lat": 47.5601,
-    "lng": -122.2891,
-    "notes": "Rainier Ave S branch in Columbia City"
-  },
-  {
-    "name": "Northgate Branch Library",
-    "category": "library",
-    "lat": 47.7062,
-    "lng": -122.3208,
-    "notes": "5th Ave NE branch near Northgate Station"
-  },
-  {
-    "name": "UW Suzzallo Library",
-    "category": "library",
-    "lat": 47.6558,
-    "lng": -122.3086,
-    "notes": "Gothic cathedral-style research library at the heart of UW campus"
-  },
-  {
-    "name": "Bellevue Main Library",
-    "category": "library",
-    "lat": 47.6148,
-    "lng": -122.2028,
-    "notes": "King County main branch in downtown Bellevue"
-  },
-
-  // ── MUSEUMS ───────────────────────────────────────────────────────────────
-  {
-    "name": "Seattle Art Museum",
-    "category": "museum",
-    "lat": 47.6072,
-    "lng": -122.3387,
-    "notes": "SAM's main downtown location at 1st Ave and University St"
-  },
-  {
-    "name": "Wing Luke Museum",
-    "category": "museum",
-    "lat": 47.5975,
-    "lng": -122.3237,
-    "notes": "Smithsonian-affiliated museum of Asian Pacific American experience"
-  },
-  {
-    "name": "Klondike Gold Rush National Historical Park",
-    "category": "museum",
-    "lat": 47.6013,
-    "lng": -122.3342,
-    "notes": "Free NPS museum in Pioneer Square covering the 1897 Gold Rush"
-  },
-  {
-    "name": "Burke Museum",
-    "category": "museum",
-    "lat": 47.6601,
-    "lng": -122.3130,
-    "notes": "Washington's state natural history and culture museum, on UW campus"
-  },
-  {
-    "name": "Henry Art Gallery",
-    "category": "museum",
-    "lat": 47.6558,
-    "lng": -122.3101,
-    "notes": "Contemporary art museum on the west edge of UW campus"
-  },
   {
     "name": "Bellevue Arts Museum",
     "category": "museum",
@@ -521,42 +537,12 @@ const LOCATIONS_DATA = [
     "lng": -122.2009,
     "notes": "Craft, design, and art museum in downtown Bellevue"
   },
-
-  // ── BOOKSTORES (category: shop) ───────────────────────────────────────────
   {
-    "name": "Elliott Bay Book Company",
-    "category": "shop",
-    "lat": 47.6162,
-    "lng": -122.3183,
-    "notes": "Seattle's beloved independent bookstore, moved to Capitol Hill in 2010"
-  },
-  {
-    "name": "Ada's Technical Books",
-    "category": "shop",
-    "lat": 47.6208,
-    "lng": -122.3149,
-    "notes": "Tech and science books plus a cafe on 15th Ave E"
-  },
-  {
-    "name": "University Book Store",
-    "category": "shop",
-    "lat": 47.6585,
-    "lng": -122.3131,
-    "notes": "The Ave's full-service academic bookstore"
-  },
-  {
-    "name": "Left Bank Books",
-    "category": "shop",
-    "lat": 47.6090,
-    "lng": -122.3406,
-    "notes": "Radical and independent titles inside Pike Place Market"
-  },
-  {
-    "name": "Third Place Books Ravenna",
-    "category": "shop",
-    "lat": 47.6771,
-    "lng": -122.3017,
-    "notes": "Community bookstore with events, near Roosevelt station"
+    "name": "Bellevue Main Library",
+    "category": "library",
+    "lat": 47.6148,
+    "lng": -122.2028,
+    "notes": "King County main branch in downtown Bellevue"
   },
   {
     "name": "Barnes & Noble Bellevue",

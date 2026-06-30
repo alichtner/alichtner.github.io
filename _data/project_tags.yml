@@ -1,0 +1,5 @@
+# Maps tag names to their project page URLs.
+# Tags listed here link to the project page instead of /tag/tagname.
+baking: /baking/
+hiking: /hiking/
+3dprinting: /3d-printing/

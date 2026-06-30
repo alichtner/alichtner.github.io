@@ -196,17 +196,6 @@ function buildStopMarkers() {
     const lines = f.properties.lines;
     const color = (lines.includes('1') && lines.includes('2')) ? '#7d3c98' : LINE_COLORS[lines[0]];
 
-    const m = L.circleMarker([lat, lng], {
-      radius: 8,
-      fillColor: color,
-      fillOpacity: 1,
-      color: '#fff',
-      weight: 2.5,
-      draggable: true,
-    });
-
-    // CircleMarker doesn't support draggable natively — use a regular Marker with a circle icon
-    // Switch to regular Marker with a round divIcon instead
     const icon = L.divIcon({
       className: 'leaflet-marker-draggable',
       html: `<div style="width:14px;height:14px;border-radius:50%;background:${color};border:3px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,0.4);"></div>`,
@@ -303,7 +292,7 @@ function refreshOutput() {
     ta.value = '// Edit coordinates here or drag markers on /transit-map/editor/\nconst STOPS_DATA = ' +
       JSON.stringify({ type: 'FeatureCollection', features: stopsData }, null, 2) + ';';
   } else {
-    ta.value = '// Add your locations here.\n// Fields: name, category, lat, lng, notes (optional)\n// Categories: restaurant, coffee, park, theatre, bar, museum, shop, other\nconst LOCATIONS_DATA = ' +
+    ta.value = '// Add your locations here.\n// Fields: name, category, lat, lng, notes (optional)\n// Categories: restaurant, coffee, park, theatre, bar, museum, library, shop, other\nconst LOCATIONS_DATA = ' +
       JSON.stringify(locsData, null, 2) + ';';
   }
 }

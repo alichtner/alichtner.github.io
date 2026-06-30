@@ -34,5 +34,5 @@ highlighter:      rouge
 permalink:        pretty
 
 
-paginate: 4
+paginate: 10
 
