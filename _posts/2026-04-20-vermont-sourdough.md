@@ -4,7 +4,7 @@ comments: false
 date: 2026-04-20
 layout: post
 title: "Vermont Sourdough"
-tags: baking
+tags: baking bread
 image: /public/img/2026/05/vermont-sourdough.jpg
 category: Bread
 subcategory: Sourdough
