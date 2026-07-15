@@ -5,11 +5,11 @@ date: 2016-06-13 05:37:09+00:00
 layout: post
 slug: galvanize-week3
 title: Week 3 - Regression and the Dying Computer
-image: /public/img/conf_annot-644x443.png
+image: /public/img/2016/06/confidence-chart.png
 tags: galvanize Regression data-science
 ---
 
-![conf_annot](/public/img/conf_annot-644x443.png) *My general confidence this week.*
+![conf_annot](/public/img/2016/06/confidence-chart.png) *My general confidence this week.*
 
 
 

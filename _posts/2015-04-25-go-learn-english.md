@@ -5,12 +5,12 @@ date: 2015-04-25
 layout: post
 slug: go-learn-english
 title: Go learn English!
-image: /public/img/translate_image.jpeg
+image: /public/img/2015/04/translate-image.jpeg
 tags: france
 project: false
 ---
 
-![translate_image](/public/img/translate_image.jpeg)
+![translate_image](/public/img/2015/04/translate-image.jpeg)
 
 A quick note on customer service and language barriers in London.
 

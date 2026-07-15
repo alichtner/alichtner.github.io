@@ -5,11 +5,11 @@ date: 2016-06-20
 layout: post
 slug: week-4-trees-forests-bagging-and-boosting
 title: Week 4 - Trees, Forests, Bagging and Boosting
-image: /public/img/pride_trees-644x474.png
+image: /public/img/2016/06/pride-random-forest.png
 tags: galvanize machine-learning random-forests supervised-methods data-science
 ---
 
-![pride_trees](/public/img/pride_trees-644x474.png) *It's Pride and here is my Random Forest - this isn't really how it works...*
+![pride_trees](/public/img/2016/06/pride-random-forest.png) *It's Pride and here is my Random Forest - this isn't really how it works...*
 
 
 

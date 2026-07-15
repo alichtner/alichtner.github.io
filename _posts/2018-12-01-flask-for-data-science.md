@@ -5,7 +5,7 @@ date: 2018-12-01
 layout: post
 slug: building-a-flask-app-model-serving
 title: 'Build a Flask app for model serving'
-image: /public/img/slow.gif
+image: /public/img/2016/07/kmeans-clustering-animation.gif
 project: true
 tags: flask data-science api jinja-templating
 ---

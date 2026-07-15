@@ -1,6 +1,6 @@
 // Add your locations here.
 // Fields: name (string), category (string), lat (number), lng (number), notes (optional string)
-// Categories: restaurant, coffee, park, theatre, bar, museum, library, shop, other
+// Categories: restaurant, coffee, park, theatre, bar, museum, library, shop, market, other
 const LOCATIONS_DATA = [
 
   // ── CAPITOL HILL (Capitol Hill Station) ─────────────────────────────────
@@ -87,6 +87,13 @@ const LOCATIONS_DATA = [
     "lat": 47.6208,
     "lng": -122.3149,
     "notes": "Tech and science books plus a cafe on 15th Ave E"
+  },
+  {
+    "name": "Capitol Hill Farmers Market",
+    "category": "market",
+    "lat": 47.616448,
+    "lng": -122.320361,
+    "notes": "E Barbara Bailey Way, Broadway & 10th Ave E. Sundays 11am–3pm, year-round; also Tuesdays 3–7pm, June–September"
   },
 
   // ── U DISTRICT (U District & University of Washington Stations) ──────────
@@ -180,6 +187,13 @@ const LOCATIONS_DATA = [
     "lat": 47.6585,
     "lng": -122.3131,
     "notes": "The Ave's full-service academic bookstore"
+  },
+  {
+    "name": "University District Farmers Market",
+    "category": "market",
+    "lat": 47.6653,
+    "lng": -122.3132,
+    "notes": "University Way NE & NE 50th St. Saturdays 9am–2pm, year-round"
   },
 
   // ── DOWNTOWN (Westlake, University Street, Pioneer Square) ───────────────
@@ -470,6 +484,13 @@ const LOCATIONS_DATA = [
     "lng": -122.2891,
     "notes": "Rainier Ave S branch in Columbia City"
   },
+  {
+    "name": "Columbia City Farmers Market",
+    "category": "market",
+    "lat": 47.5596,
+    "lng": -122.2882,
+    "notes": "S Edmunds St off Rainier Ave S. Wednesdays 3–7pm, May–October; Second Saturdays 10am–2pm in winter"
+  },
 
   // ── NORTHGATE ────────────────────────────────────────────────────────────
   {
@@ -550,5 +571,21 @@ const LOCATIONS_DATA = [
     "lat": 47.6165,
     "lng": -122.2010,
     "notes": "Bellevue Square location"
+  },
+  {
+    "name": "Bellevue Farmers Market",
+    "category": "market",
+    "lat": 47.6135,
+    "lng": -122.2013,
+    "notes": "1717 Bellevue Way NE. Thursdays 3–7:30pm May–Aug, 3–7pm Sept–Oct (May–October season)"
+  },
+
+  // ── MERCER ISLAND (Line 2) ───────────────────────────────────────────────
+  {
+    "name": "Mercer Island Farmers Market",
+    "category": "market",
+    "lat": 47.583473,
+    "lng": -122.235131,
+    "notes": "7700 SE 32nd St, near Mercer Island Community & Event Center. Sundays 10am–2pm, May 31–Oct 11, 2026"
   }
 ];
