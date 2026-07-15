@@ -5,7 +5,7 @@ date: 2016-05-23
 layout: post
 slug: galvanize-week0
 title: 'Galvanize Data Science: Week 0'
-image: https://www.aaronlichtner.com/wp-content/uploads/2016/05/pioneersquare1-644x491.jpg
+image: /public/img/2016/05/pioneer-square.jpg
 tags: galvanize data-science
 ---
 
@@ -13,7 +13,7 @@ tags: galvanize data-science
 
 
 
-![View of pioneer square from Galvanize's headquarters in Downtown Seattle](/public/img/pioneersquare1-644x491.jpg) *View of pioneer square from Galvanize's headquarters in Downtown Seattle.*
+![View of pioneer square from Galvanize's headquarters in Downtown Seattle](/public/img/2016/05/pioneer-square.jpg) *View of pioneer square from Galvanize's headquarters in Downtown Seattle.*
 
 In the data science program at Galvanize, you sign up for a 13 week, intensive course in Python, machine learning, statistics and more. It is meant to be a highly efficient means of transitioning into the data science and analytics field; a transition I've been excited to make for some time now.
 

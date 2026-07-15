@@ -5,7 +5,7 @@ date: 2015-06-07
 layout: post
 slug: little-french-quirks
 title: USA-France Quirks
-image: /public/img/DaddySucre.jpg
+image: /public/img/2015/06/sugar-daddy.jpg
 tags: france
 ---
 
@@ -19,7 +19,7 @@ tags: france
 
 If you go to an IKEA or any sort of bedding store in France, odds are you will only find square pillows for your bed. I'm sorry but this is ridiculous. They have 50% of the capabilities of a rectangular pillow, and are just not as comfortable.
 
-![squarepillow](/public/img/squarepillow.jpg)
+![squarepillow](/public/img/2015/06/square-pillow.jpg)
 
 
 ### 2. Separate Toilets
@@ -27,7 +27,7 @@ If you go to an IKEA or any sort of bedding store in France, odds are you will o
 
 I don't mean like in a separate bathroom alcove, no. In both apartments I had in France and many of the ones I visited the toilet (WC) was completely on the opposite side of the apartment from the bathroom. This meant that after going to the bathroom you would have to cross the entire apartment, including kitchen and dining room, just to wash your hands.
 
-![germs](/public/img/germs.jpg)
+![germs](/public/img/2015/06/separate-toilets.jpg)
 
 
 
@@ -36,7 +36,7 @@ I don't mean like in a separate bathroom alcove, no. In both apartments I had in
 
 When you need sugar in France, you need Daddy.
 
-![DaddySucre](/public/img/DaddySucre.jpg)
+![DaddySucre](/public/img/2015/06/sugar-daddy.jpg)
 
 
 
@@ -45,7 +45,7 @@ When you need sugar in France, you need Daddy.
 
 Hollywood gum is a very popular brand of gum in France and french people were always a bit shocked that we don't carry it in the US.
 
-![hollywoodgym](/public/img/hollywoodgym.jpg)
+![hollywoodgym](/public/img/2015/06/hollywood-gum.jpg)
 
 
 
@@ -55,7 +55,7 @@ Hollywood gum is a very popular brand of gum in France and french people were al
 One thing that I did find a little unnerving in France was that there were a significant amount of military patrolling city centers, train stations and trains.
 
 
-![military](/public/img/military-159x300.jpg)
+![military](/public/img/2015/06/soldiers-with-guns.jpg)
 
 
 
@@ -65,7 +65,7 @@ One thing that I did find a little unnerving in France was that there were a sig
 There is no such thing as a line. It is a free-for-all full of elbows, dirty glances and money-waving. The worst culprits are the miniscule, ancient French women sporting completely polyester wardrobes who wield their shopping carts like elven-forged swords.
 
 
-![oldlady](/public/img/oldlady.jpg)
+![oldlady](/public/img/2015/06/line-etiquette.jpg)
 
 
 
@@ -75,7 +75,7 @@ There is no such thing as a line. It is a free-for-all full of elbows, dirty gla
 
 As of today (June 6, 2015), gas is $5.54/gallon in France. When the dollar was weaker this number was more like $7/gallon. It's no wonder that Europeans try to save on gas.
 
-![gas](/public/img/gas-644x644.jpg)
+![gas](/public/img/2015/06/gas-prices.jpg)
 
 
 
@@ -84,7 +84,7 @@ As of today (June 6, 2015), gas is $5.54/gallon in France. When the dollar was w
 
 Coffee must be taken after dessert. This has however led to the magic that is [Cafe Gourmand](https://medium.com/@SeattleFreezer/cafe-gourmand-what-it-is-and-why-we-need-it-f6b1918617f1).
 
-![espresso](/public/img/espresso-644x518.jpg)
+![espresso](/public/img/2015/06/post-dinner-coffee.jpg)
 
 
 
@@ -127,7 +127,7 @@ Coffee must be taken after dessert. This has however led to the magic that is [C
 
 Just sour cream.
 
-![sourcream-regular](/public/img/sourcream-regular.jpg)
+![sourcream-regular](/public/img/2015/06/sour-cream.jpg)
 
 
 ### 2. Pristine Fruits and Veggies
@@ -135,7 +135,7 @@ Just sour cream.
 
 Our fruits and vegetables are all unnaturally perfect. From my experience, the fruits and veggies in France were tastier and smaller than their American counterparts. Except avocados. Avocados in France aren't great.
 
-![fruit](/public/img/fruit-644x483.jpg)
+![fruit](/public/img/2015/06/fruits-and-veggies.jpg)
 
 
 
@@ -144,7 +144,7 @@ Our fruits and vegetables are all unnaturally perfect. From my experience, the f
 
 I personally think this depends more on the city that you are in but we do seem to follow the rules a bit more about crossing the street.
 
-![dontwalk](/public/img/dontwalk.jpg)
+![dontwalk](/public/img/2015/06/dont-walk-sign.jpg)
 
 
 
@@ -153,7 +153,7 @@ I personally think this depends more on the city that you are in but we do seem 
 
 French people might find this shocking but not every meal here ends with something sweet.
 
-![macaron](/public/img/macaron-644x403.jpg)
+![macaron](/public/img/2015/06/macaron.jpg)
 
 
 
@@ -162,7 +162,7 @@ French people might find this shocking but not every meal here ends with somethi
 
 Restaurants are always open, you can pretty much eat whenever you want.
 
-![diner](/public/img/diner.jpg)
+![diner](/public/img/2015/06/24-7-diner.jpg)
 
 
 ### A couple other small things:
