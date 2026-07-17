@@ -157,6 +157,21 @@ tags: transit mapping light-rail
     font-size: 0.85rem;
   }
 
+  /* Row interactions */
+  #loc-table tbody tr { cursor: default; transition: background 0.12s; }
+  #loc-table tbody tr:hover { background: #f5f9fc; }
+  #loc-table tbody tr.row-selected {
+    background: #dceeff;
+    box-shadow: inset 3px 0 0 #268bd2;
+  }
+
+  /* Marker highlight (triggered by hovering a table row) */
+  .loc-pin.marker-highlight {
+    box-shadow: 0 0 0 5px rgba(38,139,210,0.35), 0 1px 6px rgba(0,0,0,0.3);
+    transform: rotate(-45deg) scale(1.18);
+    z-index: 10000;
+  }
+
   /* ---- Leaflet popup styles ---- */
   .leaflet-popup-content-wrapper { border-radius: 4px; }
   .leaflet-popup-content { margin: 10px 12px; min-width: 140px; font-family: "PT Sans", Helvetica, Arial, sans-serif; }
@@ -400,12 +415,16 @@ function updateAll() {
     filtered.push({ loc, wt });
   });
 
+  // Sort once so markers and table rows share the same idx ordering.
+  filtered.sort((a, b) => a.wt.minutes - b.wt.minutes);
+
   // Map markers
   locationMarkers.forEach(m => m.remove());
   locationMarkers = [];
-  filtered.forEach(({ loc, wt }) => {
+  filtered.forEach(({ loc, wt }, idx) => {
     const marker = L.marker([loc.lat, loc.lng], { icon: makeIcon(loc.category, wt.minutes) });
     marker.bindPopup(makePopup(loc, wt));
+    marker.on('click', () => selectRow(idx));
     marker.addTo(map);
     locationMarkers.push(marker);
   });
@@ -427,14 +446,12 @@ function updateAll() {
   tbl.style.display = '';
   empty.style.display = 'none';
 
-  filtered.sort((a, b) => a.wt.minutes - b.wt.minutes);
-
-  tbody.innerHTML = filtered.map(({ loc, wt }) => {
+  tbody.innerHTML = filtered.map(({ loc, wt }, idx) => {
     const c = CATEGORIES[loc.category] || CATEGORIES.other;
     const mins = Math.round(wt.minutes);
     const walkCls = wt.minutes < 5 ? 'walk-5' : wt.minutes < 10 ? 'walk-10' : 'walk-far';
     const dot = wt.minutes < 5 ? '🟢' : wt.minutes < 10 ? '🟡' : '⚪';
-    return `<tr>
+    return `<tr data-idx="${idx}">
       <td class="td-name">${c.emoji} ${loc.name}</td>
       <td class="td-cat">${c.label}</td>
       <td class="td-walk ${walkCls}">${dot} ${mins} min</td>
@@ -442,6 +459,37 @@ function updateAll() {
       <td class="td-notes">${loc.notes || '—'}</td>
     </tr>`;
   }).join('');
+
+  tbody.querySelectorAll('tr').forEach(tr => {
+    const idx = Number(tr.dataset.idx);
+    tr.addEventListener('mouseenter', () => highlightMarker(idx));
+    tr.addEventListener('mouseleave', () => unhighlightMarker(idx));
+    tr.addEventListener('click', () => selectRow(idx));
+  });
+}
+
+function markerPinEl(marker) {
+  const el = marker.getElement();
+  return el ? el.querySelector('.loc-pin') : null;
+}
+
+function highlightMarker(idx) {
+  const pin = markerPinEl(locationMarkers[idx]);
+  if (pin) pin.classList.add('marker-highlight');
+}
+
+function unhighlightMarker(idx) {
+  const pin = markerPinEl(locationMarkers[idx]);
+  if (pin) pin.classList.remove('marker-highlight');
+}
+
+function selectRow(idx) {
+  document.querySelectorAll('#loc-tbody tr.row-selected').forEach(tr => tr.classList.remove('row-selected'));
+  const tr = document.querySelector(`#loc-tbody tr[data-idx="${idx}"]`);
+  if (tr) {
+    tr.classList.add('row-selected');
+    tr.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
 }
 
 function buildCategoryUI() {
