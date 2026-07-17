@@ -214,6 +214,8 @@ tags: transit mapping light-rail
 <div id="map-controls">
   <div class="ctrl-group">
     <span class="ctrl-label">Show</span>
+    <button type="button" class="walk-btn" onclick="setAllCategories(true)">All</button>
+    <button type="button" class="walk-btn" onclick="setAllCategories(false)">None</button>
     <div id="cat-filters" style="display:flex;flex-wrap:wrap;gap:4px;"></div>
   </div>
   <div class="ctrl-divider"></div>
@@ -274,7 +276,7 @@ const LINE_COLORS = { '1': '#009AC7', '2': '#E31837' };
 const WALK_MPS = 83.3;
 
 let stops = [], locationData = [], locationMarkers = [];
-let activeCategories = new Set(Object.keys(CATEGORIES));
+let activeCategories = new Set(['coffee']);
 let walkFilter = 'all';
 let wtCache = {};
 let ringsVisible = false;
@@ -492,6 +494,30 @@ function selectRow(idx) {
   }
 }
 
+function setChipState(chip, checkbox, key, active, c) {
+  checkbox.checked = active;
+  if (active) {
+    activeCategories.add(key);
+    chip.classList.remove('inactive');
+    chip.classList.add('active');
+    chip.style.color = c.color;
+  } else {
+    activeCategories.delete(key);
+    chip.classList.remove('active');
+    chip.classList.add('inactive');
+  }
+}
+
+function setAllCategories(show) {
+  document.querySelectorAll('#cat-filters .cat-chip').forEach(chip => {
+    const checkbox = chip.querySelector('input');
+    const key = checkbox.dataset.cat;
+    const c = CATEGORIES[key] || { emoji: '📍', color: '#515151', label: key };
+    setChipState(chip, checkbox, key, show, c);
+  });
+  updateAll();
+}
+
 function buildCategoryUI() {
   const counts = {};
   const usedCats = new Set();
@@ -503,19 +529,14 @@ function buildCategoryUI() {
   const container = document.getElementById('cat-filters');
   ordered.forEach(key => {
     const c = CATEGORIES[key] || { emoji: '📍', color: '#515151', label: key };
+    const isActive = activeCategories.has(key);
     const chip = document.createElement('label');
-    chip.className = 'cat-chip active';
+    chip.className = `cat-chip ${isActive ? 'active' : 'inactive'}`;
     chip.style.color = c.color;
-    chip.innerHTML = `<input type="checkbox" checked data-cat="${key}">${c.emoji} ${c.label} <span style="opacity:0.55">${counts[key] || 0}</span>`;
-    chip.querySelector('input').addEventListener('change', e => {
-      if (e.target.checked) {
-        activeCategories.add(key);
-        chip.classList.replace('inactive', 'active');
-        chip.style.color = c.color;
-      } else {
-        activeCategories.delete(key);
-        chip.classList.replace('active', 'inactive');
-      }
+    chip.innerHTML = `<input type="checkbox" ${isActive ? 'checked' : ''} data-cat="${key}">${c.emoji} ${c.label} <span style="opacity:0.55">${counts[key] || 0}</span>`;
+    const checkbox = chip.querySelector('input');
+    checkbox.addEventListener('change', e => {
+      setChipState(chip, checkbox, key, e.target.checked, c);
       updateAll();
     });
     container.appendChild(chip);
