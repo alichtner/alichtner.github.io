@@ -157,6 +157,21 @@ tags: transit mapping light-rail
     font-size: 0.85rem;
   }
 
+  /* Row interactions */
+  #loc-table tbody tr { cursor: default; transition: background 0.12s; }
+  #loc-table tbody tr:hover { background: #f5f9fc; }
+  #loc-table tbody tr.row-selected {
+    background: #dceeff;
+    box-shadow: inset 3px 0 0 #268bd2;
+  }
+
+  /* Marker highlight (triggered by hovering a table row) */
+  .loc-pin.marker-highlight {
+    box-shadow: 0 0 0 5px rgba(38,139,210,0.35), 0 1px 6px rgba(0,0,0,0.3);
+    transform: rotate(-45deg) scale(1.18);
+    z-index: 10000;
+  }
+
   /* ---- Leaflet popup styles ---- */
   .leaflet-popup-content-wrapper { border-radius: 4px; }
   .leaflet-popup-content { margin: 10px 12px; min-width: 140px; font-family: "PT Sans", Helvetica, Arial, sans-serif; }
@@ -199,6 +214,8 @@ tags: transit mapping light-rail
 <div id="map-controls">
   <div class="ctrl-group">
     <span class="ctrl-label">Show</span>
+    <button type="button" class="walk-btn" onclick="setAllCategories(true)">All</button>
+    <button type="button" class="walk-btn" onclick="setAllCategories(false)">None</button>
     <div id="cat-filters" style="display:flex;flex-wrap:wrap;gap:4px;"></div>
   </div>
   <div class="ctrl-divider"></div>
@@ -259,7 +276,7 @@ const LINE_COLORS = { '1': '#009AC7', '2': '#E31837' };
 const WALK_MPS = 83.3;
 
 let stops = [], locationData = [], locationMarkers = [];
-let activeCategories = new Set(Object.keys(CATEGORIES));
+let activeCategories = new Set(['coffee']);
 let walkFilter = 'all';
 let wtCache = {};
 let ringsVisible = false;
@@ -400,12 +417,16 @@ function updateAll() {
     filtered.push({ loc, wt });
   });
 
+  // Sort once so markers and table rows share the same idx ordering.
+  filtered.sort((a, b) => a.wt.minutes - b.wt.minutes);
+
   // Map markers
   locationMarkers.forEach(m => m.remove());
   locationMarkers = [];
-  filtered.forEach(({ loc, wt }) => {
+  filtered.forEach(({ loc, wt }, idx) => {
     const marker = L.marker([loc.lat, loc.lng], { icon: makeIcon(loc.category, wt.minutes) });
     marker.bindPopup(makePopup(loc, wt));
+    marker.on('click', () => selectRow(idx));
     marker.addTo(map);
     locationMarkers.push(marker);
   });
@@ -427,14 +448,12 @@ function updateAll() {
   tbl.style.display = '';
   empty.style.display = 'none';
 
-  filtered.sort((a, b) => a.wt.minutes - b.wt.minutes);
-
-  tbody.innerHTML = filtered.map(({ loc, wt }) => {
+  tbody.innerHTML = filtered.map(({ loc, wt }, idx) => {
     const c = CATEGORIES[loc.category] || CATEGORIES.other;
     const mins = Math.round(wt.minutes);
     const walkCls = wt.minutes < 5 ? 'walk-5' : wt.minutes < 10 ? 'walk-10' : 'walk-far';
     const dot = wt.minutes < 5 ? '🟢' : wt.minutes < 10 ? '🟡' : '⚪';
-    return `<tr>
+    return `<tr data-idx="${idx}">
       <td class="td-name">${c.emoji} ${loc.name}</td>
       <td class="td-cat">${c.label}</td>
       <td class="td-walk ${walkCls}">${dot} ${mins} min</td>
@@ -442,6 +461,61 @@ function updateAll() {
       <td class="td-notes">${loc.notes || '—'}</td>
     </tr>`;
   }).join('');
+
+  tbody.querySelectorAll('tr').forEach(tr => {
+    const idx = Number(tr.dataset.idx);
+    tr.addEventListener('mouseenter', () => highlightMarker(idx));
+    tr.addEventListener('mouseleave', () => unhighlightMarker(idx));
+    tr.addEventListener('click', () => selectRow(idx));
+  });
+}
+
+function markerPinEl(marker) {
+  const el = marker.getElement();
+  return el ? el.querySelector('.loc-pin') : null;
+}
+
+function highlightMarker(idx) {
+  const pin = markerPinEl(locationMarkers[idx]);
+  if (pin) pin.classList.add('marker-highlight');
+}
+
+function unhighlightMarker(idx) {
+  const pin = markerPinEl(locationMarkers[idx]);
+  if (pin) pin.classList.remove('marker-highlight');
+}
+
+function selectRow(idx) {
+  document.querySelectorAll('#loc-tbody tr.row-selected').forEach(tr => tr.classList.remove('row-selected'));
+  const tr = document.querySelector(`#loc-tbody tr[data-idx="${idx}"]`);
+  if (tr) {
+    tr.classList.add('row-selected');
+    tr.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+
+function setChipState(chip, checkbox, key, active, c) {
+  checkbox.checked = active;
+  if (active) {
+    activeCategories.add(key);
+    chip.classList.remove('inactive');
+    chip.classList.add('active');
+    chip.style.color = c.color;
+  } else {
+    activeCategories.delete(key);
+    chip.classList.remove('active');
+    chip.classList.add('inactive');
+  }
+}
+
+function setAllCategories(show) {
+  document.querySelectorAll('#cat-filters .cat-chip').forEach(chip => {
+    const checkbox = chip.querySelector('input');
+    const key = checkbox.dataset.cat;
+    const c = CATEGORIES[key] || { emoji: '📍', color: '#515151', label: key };
+    setChipState(chip, checkbox, key, show, c);
+  });
+  updateAll();
 }
 
 function buildCategoryUI() {
@@ -455,19 +529,14 @@ function buildCategoryUI() {
   const container = document.getElementById('cat-filters');
   ordered.forEach(key => {
     const c = CATEGORIES[key] || { emoji: '📍', color: '#515151', label: key };
+    const isActive = activeCategories.has(key);
     const chip = document.createElement('label');
-    chip.className = 'cat-chip active';
+    chip.className = `cat-chip ${isActive ? 'active' : 'inactive'}`;
     chip.style.color = c.color;
-    chip.innerHTML = `<input type="checkbox" checked data-cat="${key}">${c.emoji} ${c.label} <span style="opacity:0.55">${counts[key] || 0}</span>`;
-    chip.querySelector('input').addEventListener('change', e => {
-      if (e.target.checked) {
-        activeCategories.add(key);
-        chip.classList.replace('inactive', 'active');
-        chip.style.color = c.color;
-      } else {
-        activeCategories.delete(key);
-        chip.classList.replace('active', 'inactive');
-      }
+    chip.innerHTML = `<input type="checkbox" ${isActive ? 'checked' : ''} data-cat="${key}">${c.emoji} ${c.label} <span style="opacity:0.55">${counts[key] || 0}</span>`;
+    const checkbox = chip.querySelector('input');
+    checkbox.addEventListener('change', e => {
+      setChipState(chip, checkbox, key, e.target.checked, c);
       updateAll();
     });
     container.appendChild(chip);
